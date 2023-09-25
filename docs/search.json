@@ -2,9 +2,30 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "lunacatalan.github.io",
+    "title": "Luna Catalán",
     "section": "",
-    "text": "Website is under construction, check back soon :)"
+    "text": "My name is Luna Herschenfeld-Catalán, and this is where I’m going to add in my bio."
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Luna Catalán",
+    "section": "",
+    "text": "My name is Luna Herschenfeld-Catalán, and this is where I’m going to add in my bio."
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Luna Catalán",
+    "section": "Education",
+    "text": "Education\nMaster of Environmental Data Science, Bren (2024)\nEnvironmental Science and Psychological Brain Sciences, UCSB (2019)"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Luna Catalán",
+    "section": "Experience",
+    "text": "Experience"
   },
   {
     "objectID": "about.html",
