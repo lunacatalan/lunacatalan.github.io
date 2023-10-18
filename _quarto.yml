@@ -3,17 +3,31 @@ project:
   output-dir: docs
 
 website:
-  title: "Luna Catalán"
+  #favicon: # gotta make one
   navbar:
-    left:
+    title: false # title on top left corner
+    #logo: #file/path/to/logo.png
+    #logo-alt: "Luna Catalán"
+    right:
       - href: index.qmd
-        text: Home
+        text: Home # use text options to update name
       - href: resources.qmd
-        text: Resources
+        text: About
+      - icon: github # icons
+        href: https://github.com/lunacatalan
+  page-footer: 
+    background: light
+    left: 
+      - "Copyright 2021, Luna Catalán"
+    right:
+      - icon: github # icons
+        href: https://github.com/lunacatalan
 
 format:
   html:
-    theme: flatly
+    theme: 
+      - styles.scss
+    mainfont: Montserrat
     css: styles.css
     toc: true
     page-layout: full

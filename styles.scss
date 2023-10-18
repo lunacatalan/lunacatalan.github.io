@@ -1,0 +1,31 @@
+/*-- scss:defaults --*/
+
+//Import fonts
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@200;400;500&display=swap');
+
+// Colors 
+$dark-orange: #E77600FF;
+$light-pink: #CBE1F3;
+$sand: #BA8946FF;
+$cream: #FDFBF7;
+$brown: #682714FF;
+$aqua-blue: #068D9DFF;
+$dark-blue: #204D88FF;
+$darker-blue: #274756FF;
+$my-font-size: 25px;
+
+// Base Document Colors
+$navbar-bg: $cream;
+$navbar-fg: $dark-orange;
+$navbar-hl: $brown;
+$body-bg: $light-pink;
+$body-color: $brown; // page text 
+$footer-bg: $cream; // footer 
+$link-color: $darker-blue; // hyperlinks 
+
+// Inline code
+$code-bg: $cream; // inline code background color
+$code-color: $darker-blue; // inline code text color
+
+// Code blocks
+$code-block-bg: $cream; // code block background color

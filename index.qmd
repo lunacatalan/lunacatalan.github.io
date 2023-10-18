@@ -1,9 +1,11 @@
 ---
 title: "Luna Catalán"
-toc: FALSE
+toc: FALSE #remove "On this page" table of contents
 image: website_image.JPG
 about:
   template: trestles
+  image-shape: round
+  image-width: 20em
   links: 
     - text: LinkedIn
       href: https://www.linkedin.com/in/luna-herschenfeld-catalan-915795b0/
