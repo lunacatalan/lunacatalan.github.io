@@ -2,4 +2,11 @@
 title: "About"
 ---
 
+## Education 
+
+Master of Environmental Data Science, Bren (2024)
+
+Environmental Science and Psychological Brain Sciences, UCSB (2019)
+
+## Experience
 This page is under construction, check back in soon :)

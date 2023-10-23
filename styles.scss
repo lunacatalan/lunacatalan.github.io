@@ -4,28 +4,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@200;400;500&display=swap');
 
 // Colors 
-$dark-orange: #E77600FF;
-$light-pink: #CBE1F3;
-$sand: #BA8946FF;
+$dark-purple: #540202;
+$dark-orange: #FFA012;
 $cream: #FDFBF7;
-$brown: #682714FF;
-$aqua-blue: #068D9DFF;
-$dark-blue: #204D88FF;
-$darker-blue: #274756FF;
+$brown: #372500;
+
+$light-yellow: #d29322;
+$light-blue: #AEC9E1;
+$dark-gray: #32333E;
+$light-brown: #9E7253;
+$light-gray: #687B8A;
+$dark-blue: #3F6F8B;
 $my-font-size: 25px;
 
 // Base Document Colors
 $navbar-bg: $cream;
-$navbar-fg: $dark-orange;
-$navbar-hl: $brown;
-$body-bg: $light-pink;
-$body-color: $brown; // page text 
-$footer-bg: $cream; // footer 
-$link-color: $darker-blue; // hyperlinks 
+$navbar-fg: $light-brown; // nav bar text
+$navbar-hl: $dark-blue;
+$body-bg: $light-blue;
+$body-color: $dark-gray; // page text 
+$footer-bg: $cream; // footer
+$link-color: $dark-blue; // hyperlinks 
 
 // Inline code
 $code-bg: $cream; // inline code background color
-$code-color: $darker-blue; // inline code text color
+$code-color: $dark-blue; // inline code text color
 
 // Code blocks
 $code-block-bg: $cream; // code block background color

@@ -2,16 +2,16 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Luna Catalán",
+    "title": "",
     "section": "",
-    "text": "My name is Luna Herschenfeld-Catalán, and this is where I’m going to add in my bio."
+    "text": "My name is Luna Herschenfeld-Catalán, and this is where I’m going to add in my bio where I can tell you some cool things baout myself."
   },
   {
     "objectID": "index.html#introduction",
     "href": "index.html#introduction",
-    "title": "Luna Catalán",
+    "title": "",
     "section": "",
-    "text": "My name is Luna Herschenfeld-Catalán, and this is where I’m going to add in my bio."
+    "text": "My name is Luna Herschenfeld-Catalán, and this is where I’m going to add in my bio where I can tell you some cool things baout myself."
   },
   {
     "objectID": "index.html#education",
@@ -32,6 +32,55 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "This page is under construction, check back in soon :)"
+    "text": "Master of Environmental Data Science, Bren (2024)\nEnvironmental Science and Psychological Brain Sciences, UCSB (2019)"
+  },
+  {
+    "objectID": "blog/2023-10-23-first-post/index.html",
+    "href": "blog/2023-10-23-first-post/index.html",
+    "title": "My First Blog Post!",
+    "section": "",
+    "text": "Blogging is so fun, whoop!\nI am now adding a footnote1 here!"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "My First Blog Post!\n\n\n\n\n\n\n\nQuarto\n\n\nMEDS\n\n\nWorkshop\n\n\n\n\nThis is a test for posting a blog for the first time!\n\n\n\n\n\n\nOct 23, 2023\n\n\nLuna Catalan\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "blog/2023-10-23-first-post/index.html#part-1",
+    "href": "blog/2023-10-23-first-post/index.html#part-1",
+    "title": "My First Blog Post!",
+    "section": "",
+    "text": "Blogging is so fun, whoop!\nI am now adding a footnote1 here!"
+  },
+  {
+    "objectID": "blog/2023-10-23-first-post/index.html#part-2",
+    "href": "blog/2023-10-23-first-post/index.html#part-2",
+    "title": "My First Blog Post!",
+    "section": "Part 2",
+    "text": "Part 2\nHopefully you enjoyed reading this!"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About",
+    "section": "",
+    "text": "Master of Environmental Data Science, Bren (2024)\nEnvironmental Science and Psychological Brain Sciences, UCSB (2019)"
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "About",
+    "section": "Experience",
+    "text": "Experience\nThis page is under construction, check back in soon :)"
+  },
+  {
+    "objectID": "blog/2023-10-23-first-post/index.html#footnotes",
+    "href": "blog/2023-10-23-first-post/index.html#footnotes",
+    "title": "My First Blog Post!",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThis is my first footnote: You look cute today ;)↩︎"
   }
 ]

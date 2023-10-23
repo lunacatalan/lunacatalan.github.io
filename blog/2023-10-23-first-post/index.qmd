@@ -1,0 +1,30 @@
+---
+title: "My First Blog Post!"
+description: "This is a test for posting a blog for the first time!"
+author: 
+  - name: Luna Catalan # anythig within this hyphen is about the same author
+    url: https://lunacatalan.github.io/
+    # add orcid ID with number identifier
+    affiliation: MEDS
+    affiliation-url: https://bren.ucsb.edu/masters-programs/master-environmental-data-science
+date: 10-23-2023
+categories: [Quarto, MEDS, Workshop]
+# citation will add citation location even without filling it out
+citation:
+  url: https://lunacatalan.github.io/blog/2023-10-23-first-post/
+draft: false # if true will merge to main but will not be posted on your website
+bibliography: references.bib
+
+---
+
+## Part 1
+
+Blogging is so fun, whoop!
+
+I am now adding a footnote[^1] here!
+
+[^1]: This is my first footnote: You look cute today ;)
+
+## Part 2
+
+Hopefully you enjoyed reading this!

@@ -5,12 +5,14 @@ project:
 website:
   #favicon: # gotta make one
   navbar:
-    title: false # title on top left corner
+    title: "Luna Catalán" # title on top left corner
     #logo: #file/path/to/logo.png
     #logo-alt: "Luna Catalán"
     right:
       - href: index.qmd
         text: Home # use text options to update name
+      - href: blog.qmd
+        text: Blog
       - href: resources.qmd
         text: About
       - icon: github # icons
