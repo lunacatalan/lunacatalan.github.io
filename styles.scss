@@ -19,8 +19,8 @@ $my-font-size: 25px;
 
 // Base Document Colors
 $navbar-bg: $cream;
-$navbar-fg: $light-brown; // nav bar text
-$navbar-hl: $dark-blue;
+$navbar-fg: $light-gray; // nav bar text
+$navbar-hl: $light-yellow; // nav bar text highlight when clicked
 $body-bg: $light-blue;
 $body-color: $dark-gray; // page text 
 $footer-bg: $cream; // footer
@@ -32,3 +32,26 @@ $code-color: $dark-blue; // inline code text color
 
 // Code blocks
 $code-block-bg: $cream; // code block background color
+
+
+
+
+/*-- scss:rules --*/
+
+h1, h2 {
+  letter-spacing: 5px;
+  color: $dark-gray;
+  
+}
+
+
+.title {
+  color: $dark-gray;
+  
+}
+
+
+.center-text {
+  color: $light-brown;
+  
+}
