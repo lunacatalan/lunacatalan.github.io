@@ -1,0 +1,7 @@
+# enables banner style title blocks to all posts inside 'blog' folder
+title-block-banner: true
+
+
+# will only rerender the blog post if there is a change made somewhere
+# if set to true, it will make me render each post
+freeze: auto
