@@ -7,22 +7,23 @@
 $dark-purple: #540202;
 $dark-orange: #FFA012;
 $cream: #FDFBF7;
+$platinum: #E5E6E6;
 $brown: #372500;
 
-$light-yellow: #d29322;
-$light-blue: #AEC9E1;
+$light-yellow: #EFC274;
+$light-blue:#B4D2EC;
 $dark-gray: #32333E;
 $light-brown: #9E7253;
 $light-gray: #687B8A;
-$dark-blue: #3F6F8B;
+$dark-blue:#1F3452;
 $my-font-size: 25px;
 
 // Base Document Colors
 $navbar-bg: $cream;
-$navbar-fg: $light-gray; // nav bar text
-$navbar-hl: $light-yellow; // nav bar text highlight when clicked
-$body-bg: $light-blue;
-$body-color: $dark-gray; // page text 
+$navbar-fg: $dark-blue; // nav bar text
+$navbar-hl: $dark-orange; // nav bar text highlight when clicked
+$body-bg: $light-blue; // background color
+$body-color: $dark-blue; // page text 
 $footer-bg: $cream; // footer
 $link-color: $dark-blue; // hyperlinks 
 

@@ -13,7 +13,7 @@ website:
         text: Home # use text options to update name
       - href: blog.qmd
         text: Blog
-      - href: resources.qmd
+      - href: about.qmd
         text: About
       - icon: github # icons
         href: https://github.com/lunacatalan

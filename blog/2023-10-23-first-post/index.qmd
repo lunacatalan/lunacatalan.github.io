@@ -1,6 +1,6 @@
 ---
-title: "My First Blog Post!"
-description: "This is a test for posting a blog for the first time!"
+title: "First Blog Post!"
+description: "Some thoughts about what I want to do"
 author: 
   - name: Luna Catalan # anythig within this hyphen is about the same author
     url: https://lunacatalan.github.io/
@@ -19,11 +19,18 @@ bibliography: references.bib
 
 ## Part 1
 
-Blogging is so fun, whoop!
+I would love to work at the intersection between data science and policy.
 
-I am now adding a footnote[^1] here!
+Why?
 
-[^1]: This is my first footnote: You look cute today ;)
+1. Science communication is hard
+
+2. People don't know how to talk to each other
+
+3. I am good with people, and my degree in psychology has helped me understand how people make decisions[^1]
+
+
+[^1]: I did a research proposal about the effect of message framing on agreement to climate change policy
 
 ## Part 2
 

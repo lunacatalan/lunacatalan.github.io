@@ -1,4 +1,4 @@
 ---
 title: "Fun things to click for cool facts!"
-
+image: about_photo.JPG
 ---

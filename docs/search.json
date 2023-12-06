@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "",
     "section": "",
-    "text": "My name is Luna Herschenfeld-Catalán, and this is where I’m going to add in my bio where I can tell you some cool things baout myself."
+    "text": "I am currently a masters student at the Bren School of Environmental Science and Management. I want to be at the intersection of data and policy to foster effective communication in the development of solutions. My main areas of interest are water, equitable access to affordable housing and education, and urban design. When I’m not sciencing, I can be found dancing, running, swimming, or perfecting my focaccia recipe (it’s almost there)."
   },
   {
     "objectID": "index.html#introduction",
@@ -37,28 +37,28 @@
   {
     "objectID": "blog/2023-10-23-first-post/index.html",
     "href": "blog/2023-10-23-first-post/index.html",
-    "title": "My First Blog Post!",
+    "title": "First Blog Post!",
     "section": "",
-    "text": "Blogging is so fun, whoop!\nI am now adding a footnote1 here!"
+    "text": "I would love to work at the intersection between data science and policy.\nWhy?\n\nScience communication is hard\nPeople don’t know how to talk to each other\nI am good with people, and my degree in psychology has helped me understand how people make decisions1"
   },
   {
     "objectID": "blog.html",
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "My First Blog Post!\n\n\n\n\n\n\n\nQuarto\n\n\nMEDS\n\n\nWorkshop\n\n\n\n\nThis is a test for posting a blog for the first time!\n\n\n\n\n\n\nOct 23, 2023\n\n\nLuna Catalan\n\n\n\n\n\n\nNo matching items"
+    "text": "First Blog Post!\n\n\n\n\n\n\n\nQuarto\n\n\nMEDS\n\n\nWorkshop\n\n\n\n\nSome thoughts about what I want to do\n\n\n\n\n\n\nOct 23, 2023\n\n\nLuna Catalan\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog/2023-10-23-first-post/index.html#part-1",
     "href": "blog/2023-10-23-first-post/index.html#part-1",
-    "title": "My First Blog Post!",
+    "title": "First Blog Post!",
     "section": "",
-    "text": "Blogging is so fun, whoop!\nI am now adding a footnote1 here!"
+    "text": "I would love to work at the intersection between data science and policy.\nWhy?\n\nScience communication is hard\nPeople don’t know how to talk to each other\nI am good with people, and my degree in psychology has helped me understand how people make decisions1"
   },
   {
     "objectID": "blog/2023-10-23-first-post/index.html#part-2",
     "href": "blog/2023-10-23-first-post/index.html#part-2",
-    "title": "My First Blog Post!",
+    "title": "First Blog Post!",
     "section": "Part 2",
     "text": "Part 2\nHopefully you enjoyed reading this!"
   },
@@ -79,8 +79,15 @@
   {
     "objectID": "blog/2023-10-23-first-post/index.html#footnotes",
     "href": "blog/2023-10-23-first-post/index.html#footnotes",
-    "title": "My First Blog Post!",
+    "title": "First Blog Post!",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nThis is my first footnote: You look cute today ;)↩︎"
+    "text": "Footnotes\n\n\nI did a research proposal about the effect of message framing on agreement to climate change policy↩︎"
+  },
+  {
+    "objectID": "index.html#luna-herschenfeld-catalán",
+    "href": "index.html#luna-herschenfeld-catalán",
+    "title": "",
+    "section": "",
+    "text": "I am currently a masters student at the Bren School of Environmental Science and Management. I want to be at the intersection of data and policy to foster effective communication in the development of solutions. My main areas of interest are water, equitable access to affordable housing and education, and urban design. When I’m not sciencing, I can be found dancing, running, swimming, or perfecting my focaccia recipe (it’s almost there)."
   }
 ]

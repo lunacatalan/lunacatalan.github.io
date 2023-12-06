@@ -1,5 +1,11 @@
 ---
 title: "About"
+image: about_photo.JPG
+toc: FALSE
+about:
+  template: solana
+  image-shape: rectangle
+  image-width: 15em
 ---
 
 ## Education 
