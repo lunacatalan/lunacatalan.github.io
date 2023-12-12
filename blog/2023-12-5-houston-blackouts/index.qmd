@@ -8,7 +8,6 @@ categories: [Geospatial, Quarto, R, MEDS] # self-defined categories
 citation: 
   url: https://lunacatalan.github.io/blog/2023-12-5-houston-blackouts/ 
 #image: preview-image.png
-draft: FALSE
 toc: TRUE
 
 ---
