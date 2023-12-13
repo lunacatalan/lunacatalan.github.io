@@ -17,23 +17,26 @@ $light-brown: #9E7253;
 $light-gray: #687B8A;
 $dark-blue:#1F3452;
 $my-font-size: 25px;
+$lighter-blue: #bad8f1eb;
+$white: #ffffff;
 
 // Base Document Colors
 $navbar-bg: $cream;
 $navbar-fg: $dark-blue; // nav bar text
 $navbar-hl: $dark-orange; // nav bar text highlight when clicked
-$body-bg: $light-blue; // background color
+$body-bg: $white; // background color
 $body-color: $dark-blue; // page text 
 $footer-bg: $cream; // footer
 $link-color: $dark-blue; // hyperlinks 
 
 // Inline code
 $code-bg: $cream; // inline code background color
-$code-color: $dark-blue; // inline code text color
+$code-color: $dark-gray; // inline code text color
 
 // Code blocks
-$code-block-bg: $cream; // code block background color
-
+$code-block-bg: $white; // code block background color
+$code-block-padding-left: $cream;
+$code-block-bg-padding: 1.0em;
 
 
 
@@ -44,7 +47,6 @@ h1, h2 {
   color: $dark-gray;
   
 }
-
 
 .title {
   color: $dark-gray;
