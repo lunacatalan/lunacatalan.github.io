@@ -193,7 +193,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#about" id="toc-about" class="nav-link active" data-scroll-target="#about">About</a></li>
+  <li><a href="#project-background" id="toc-project-background" class="nav-link active" data-scroll-target="#project-background">Project background</a></li>
   <li><a href="#highlights" id="toc-highlights" class="nav-link" data-scroll-target="#highlights">Highlights</a></li>
   <li><a href="#data-information" id="toc-data-information" class="nav-link" data-scroll-target="#data-information">Data Information</a></li>
   <li><a href="#import-libraries" id="toc-import-libraries" class="nav-link" data-scroll-target="#import-libraries">Import Libraries</a></li>
@@ -209,7 +209,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#data-selection-1" id="toc-data-selection-1" class="nav-link" data-scroll-target="#data-selection-1">Data selection</a></li>
   </ul></li>
   <li><a href="#updates-before-we-can-map" id="toc-updates-before-we-can-map" class="nav-link" data-scroll-target="#updates-before-we-can-map">Updates before we can map</a></li>
-  <li><a href="#map" id="toc-map" class="nav-link" data-scroll-target="#map">Map</a></li>
+  <li><a href="#map" id="toc-map" class="nav-link" data-scroll-target="#map">Map</a>
+  <ul class="collapse">
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -238,9 +241,10 @@ h1{
 <figcaption class="figure-caption">The Thomas Fire in 2017, image from NASA Modis Satellite.</figcaption>
 </figure>
 </div>
-<section id="about" class="level2">
-<h2 class="anchored" data-anchor-id="about">About</h2>
-<p>In this blog I will investigate the Thomas Fire that occured in California in 2017. I will create a time series graph to visualize the impact of the fire on the air quality index (AQI) of Santa Barbara County, and a false color image to understand the extent of the fire.</p>
+<section id="project-background" class="level2">
+<h2 class="anchored" data-anchor-id="project-background">Project background</h2>
+<p>In this blog I will investigate the Thomas Fire that occured in California in 2017. The Thomas Fire occured in 2017 and burned for over 40 days. The fire destroyed over 280,00 acres, destroyed 1,063 structures and resulted in one civilian and one firefighter fatality (VCFD, 2019). Understanding the impact on Air Quality is important for public health advisories, and planning public and emergency response when the next fire occurs.</p>
+<p>I will create a time series graph to visualize the impact of the fire on the air quality index (AQI) of Santa Barbara County, and a false color image to understand the extent of the fire.</p>
 <p>This analysis can be accessed at the repo here: <a href="https://github.com/lunacatalan/ca-thomas-fire">Repository link</a></p>
 </section>
 <section id="highlights" class="level2">
@@ -1150,8 +1154,13 @@ landsat: EPSG:32611</code></pre>
 </div>
 </div>
 <p>These figures show a plot of the AQI in Santa Barbara in the months before and after the Thomas Fire. This shows that there was a very large increase in the Aqir Quality index, sugesting that the quality of air declined significantly. The map on the right shows a visual of the area covered by tge Thomas Fire to give ccontext for the size of the fire that led to the AQI results in the graph.</p>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">References</h3>
+<p>NASA image by Jeff Schmaltz, LANCE/EOSDIS Rapid Response./</p>
+<p>“VCFD Determines Cause of The Thomas Fire.” Ventura County Fire Department, 13 Mar.&nbsp;2019, vcfd.org/news/vcfd-determines-cause-of-the-thomas-fire/#:~:text=The%20Thomas%20Fire%20started%20on,other%2C%20creating%20an%20electrical%20arc.</p>
 
 
+</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{herschenfeld-catalán2023,

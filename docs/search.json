@@ -35,11 +35,11 @@
     "text": "The Thomas Fire in 2017, image from NASA Modis Satellite."
   },
   {
-    "objectID": "blog/2023-13-23/thomas-fire.html#about",
-    "href": "blog/2023-13-23/thomas-fire.html#about",
+    "objectID": "blog/2023-13-23/thomas-fire.html#project-background",
+    "href": "blog/2023-13-23/thomas-fire.html#project-background",
     "title": "Analysis of Air Quality from Thomas Fire in Santa Barbara",
-    "section": "About",
-    "text": "About\nIn this blog I will investigate the Thomas Fire that occured in California in 2017. I will create a time series graph to visualize the impact of the fire on the air quality index (AQI) of Santa Barbara County, and a false color image to understand the extent of the fire.\nThis analysis can be accessed at the repo here: Repository link"
+    "section": "Project background",
+    "text": "Project background\nIn this blog I will investigate the Thomas Fire that occured in California in 2017. The Thomas Fire occured in 2017 and burned for over 40 days. The fire destroyed over 280,00 acres, destroyed 1,063 structures and resulted in one civilian and one firefighter fatality (VCFD, 2019). Understanding the impact on Air Quality is important for public health advisories, and planning public and emergency response when the next fire occurs.\nI will create a time series graph to visualize the impact of the fire on the air quality index (AQI) of Santa Barbara County, and a false color image to understand the extent of the fire.\nThis analysis can be accessed at the repo here: Repository link"
   },
   {
     "objectID": "blog/2023-13-23/thomas-fire.html#highlights",
