@@ -28,90 +28,6 @@
     "text": "Experience\nThis page is under construction, check back in soon :)"
   },
   {
-    "objectID": "blog/2023-10-23-first-post/index.html",
-    "href": "blog/2023-10-23-first-post/index.html",
-    "title": "First Blog Post!",
-    "section": "",
-    "text": "I would love to work at the intersection between data science and policy.\nWhy?\n\nScience communication is hard\nPeople don’t know how to talk to each other\nI am good with people, and my degree in psychology has helped me understand how people make decisions1"
-  },
-  {
-    "objectID": "blog/2023-10-23-first-post/index.html#part-1",
-    "href": "blog/2023-10-23-first-post/index.html#part-1",
-    "title": "First Blog Post!",
-    "section": "",
-    "text": "I would love to work at the intersection between data science and policy.\nWhy?\n\nScience communication is hard\nPeople don’t know how to talk to each other\nI am good with people, and my degree in psychology has helped me understand how people make decisions1"
-  },
-  {
-    "objectID": "blog/2023-10-23-first-post/index.html#part-2",
-    "href": "blog/2023-10-23-first-post/index.html#part-2",
-    "title": "First Blog Post!",
-    "section": "Part 2",
-    "text": "Part 2\nHopefully you enjoyed reading this!"
-  },
-  {
-    "objectID": "blog/2023-10-23-first-post/index.html#footnotes",
-    "href": "blog/2023-10-23-first-post/index.html#footnotes",
-    "title": "First Blog Post!",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nI did a research proposal about the effect of message framing on agreement to climate change policy↩︎"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "",
-    "section": "",
-    "text": "I am currently a masters student at the Bren School of Environmental Science and Management. I want to be at the intersection of data and policy to foster effective communication in the development of solutions. My main areas of interest are water, equitable access to affordable housing and education, and urban design. When I’m not sciencing, I can be found dancing, running, swimming, or perfecting my focaccia recipe (it’s almost there)."
-  },
-  {
-    "objectID": "index.html#luna-herschenfeld-catalán",
-    "href": "index.html#luna-herschenfeld-catalán",
-    "title": "",
-    "section": "",
-    "text": "I am currently a masters student at the Bren School of Environmental Science and Management. I want to be at the intersection of data and policy to foster effective communication in the development of solutions. My main areas of interest are water, equitable access to affordable housing and education, and urban design. When I’m not sciencing, I can be found dancing, running, swimming, or perfecting my focaccia recipe (it’s almost there)."
-  },
-  {
-    "objectID": "blog/2023-12-5-houston-blackouts/index.html",
-    "href": "blog/2023-12-5-houston-blackouts/index.html",
-    "title": "Analysis of Houston Blackouts",
-    "section": "",
-    "text": "Investigated the socioeconomic factors associated with occurrence of blackouts in Houston, Texas metropolitan area that influenced recovery post blackouts.\n\n\nIn February 2021, Texas experienced multiple winter storms that led to power outages across the state and left over 4.5 million homes and businesses without power1."
-  },
-  {
-    "objectID": "blog/2023-12-5-houston-blackouts/index.html#project-background",
-    "href": "blog/2023-12-5-houston-blackouts/index.html#project-background",
-    "title": "Analysis of Houston Blackouts",
-    "section": "",
-    "text": "In February 2021, Texas experienced multiple winter storms that led to power outages across the state and left over 4.5 million homes and businesses without power1."
-  },
-  {
-    "objectID": "blog/2023-12-5-houston-blackouts/index.html#sources",
-    "href": "blog/2023-12-5-houston-blackouts/index.html#sources",
-    "title": "Analysis of Houston Blackouts",
-    "section": "Sources",
-    "text": "Sources\nLIGHT DATA\nThe VIIRS data is distributed in 10x10 degree tiles in sinusoidal equal-area projection. They are identified by horizontal (h) and vertical (v) position in the grid. Houston is included in two tiles: h08v05 and h08v06. We can access tiles through NASA’s Level-1 and Atmospheric Archive & Distribution System Distributed Active Archive Center (LAADS DAAC). Since we have two dates, we need to access these tiles on each day.\n\n\nROAD AND BUILDING DATA\nSince highways account for a large amount of night lights, we want to exclude areas near highways to prevent falsely identifying areas with reduced traffic as areas without power. A shapefile with all of the highways in Texas was prepared by Geofabrik’s download sites, and we compiled a subset of roads that intersect the Houston metropolitan area in a Geopackage (.gpkg file). We prepared a GeoPackage with only houses in the Houston Metropolitan Area using building data from OpenStreetMap which was also provided by Geofabrik.\n\n\nSOCIOECONOMIC DATA\nWe used the U.S. Census Bureau’s American Community Survey for census tracts in 2019 as a proxy for socioeconomic information at the county level. This data is stored in a folder: ACS_2019_5YR_TRACT_48.gdb which has layers that can be accessed using st_layers(). Each layer is a subset of the fields contained in ACS metadata.\nSince the layers are separate, to access the ACS attributes associated with the geemetries you have to combine them into a single feature layer."
-  },
-  {
-    "objectID": "blog/2023-12-5-houston-blackouts/index.html#analysis",
-    "href": "blog/2023-12-5-houston-blackouts/index.html#analysis",
-    "title": "Analysis of Houston Blackouts",
-    "section": "Analysis",
-    "text": "Analysis"
-  },
-  {
-    "objectID": "blog/2023-12-5-houston-blackouts/index.html#results",
-    "href": "blog/2023-12-5-houston-blackouts/index.html#results",
-    "title": "Analysis of Houston Blackouts",
-    "section": "Results",
-    "text": "Results\nFrom the visualizations above, there was no difference in the median income distribution of counties that experienced blackouts and those that did not experience blackouts.\nThe map shows that census blocks affected by blackouts seem to congregate closer to the center of Houston’s metropolitan area. One issue with this analysis is that the distribution of census blocks is not uniform over the Houston area, so we can only say that it looks like more of the census tracts in the center of the metropolitan area were affected by blackouts, but the distribution of the blackouts extends outwards.\nThe box plot above shows that there is not a big difference in the median income distribution of census tracts that were affected by blackouts and those that were not affected. This distribution represents the aggregate of median income in each census tact which means that it is at a lower resolution than the blackout data. This has a potential to erase spatial patters within the census tracts that may represent a more accurate relationship between income and blackouts.\nMore exploration of income distribution at a finer spatial resolution would be beneficial to understand any economic disparities in the preparedness for buildings to handle winter storms in Houston, Texas."
-  },
-  {
-    "objectID": "blog/2023-12-5-houston-blackouts/index.html#footnotes",
-    "href": "blog/2023-12-5-houston-blackouts/index.html#footnotes",
-    "title": "Analysis of Houston Blackouts",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nWikipedia. 2021. “2021 Texas power crisis.” Last modified October 2, 2021. https://en.wikipedia.org/wiki/2021_Texas_power_crisis.↩︎"
-  },
-  {
     "objectID": "blog/2023-13-23/thomas-fire.html",
     "href": "blog/2023-13-23/thomas-fire.html",
     "title": "Analysis of Air Quality from Thomas Fire in Santa Barbara",
@@ -175,10 +91,87 @@
     "text": "Background\n\n\nQuestion\n\n\nAnalysis\n\n\nConclusions\n\n\nFuture Steps\n\n\n\n\nCitationBibTeX citation:@online{herschenfeld-catalán2023,\n  author = {Herschenfeld-Catalán, Luna},\n  title = {Causes of {Groundwater} {Level} {Decline} in the {Qazvin}\n    {Aquifer,} {Iran}},\n  date = {2023-12-12},\n  url = {https://lunacatalan.github.io/blog/12-12-2023-groundwater-decline/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nHerschenfeld-Catalán, Luna. 2023. “Causes of Groundwater Level\nDecline in the Qazvin Aquifer, Iran.” December 12, 2023. https://lunacatalan.github.io/blog/12-12-2023-groundwater-decline/."
   },
   {
-    "objectID": "blog/2023-13-23/thomas-fire.html#import-libraries",
-    "href": "blog/2023-13-23/thomas-fire.html#import-libraries",
-    "title": "Analysis of Air Quality from Thomas Fire in Santa Barbara",
-    "section": "Import Libraries",
-    "text": "Import Libraries\n\n\nCode\n# import libraries\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\nimport os \nimport numpy as n\n\n\nimport xarray as xr\nimport rioxarray as rioxr\nimport geopandas as gpd\n\nfrom shapely.geometry import box\nimport matplotlib.patches as mpatches # to create legends"
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "",
+    "section": "",
+    "text": "I am currently a masters student at the Bren School of Environmental Science and Management. I want to be at the intersection of data and policy to foster effective communication in the development of solutions. My main areas of interest are water, equitable access to affordable housing and education, and urban design. When I’m not sciencing, I can be found dancing, running, swimming, or perfecting my focaccia recipe (it’s almost there)."
+  },
+  {
+    "objectID": "index.html#luna-herschenfeld-catalán",
+    "href": "index.html#luna-herschenfeld-catalán",
+    "title": "",
+    "section": "",
+    "text": "I am currently a masters student at the Bren School of Environmental Science and Management. I want to be at the intersection of data and policy to foster effective communication in the development of solutions. My main areas of interest are water, equitable access to affordable housing and education, and urban design. When I’m not sciencing, I can be found dancing, running, swimming, or perfecting my focaccia recipe (it’s almost there)."
+  },
+  {
+    "objectID": "blog/2023-10-23-first-post/index.html",
+    "href": "blog/2023-10-23-first-post/index.html",
+    "title": "First Blog Post!",
+    "section": "",
+    "text": "I would love to work at the intersection between data science and policy.\nWhy?\n\nScience communication is hard\nPeople don’t know how to talk to each other\nI am good with people, and my degree in psychology has helped me understand how people make decisions1"
+  },
+  {
+    "objectID": "blog/2023-10-23-first-post/index.html#part-1",
+    "href": "blog/2023-10-23-first-post/index.html#part-1",
+    "title": "First Blog Post!",
+    "section": "",
+    "text": "I would love to work at the intersection between data science and policy.\nWhy?\n\nScience communication is hard\nPeople don’t know how to talk to each other\nI am good with people, and my degree in psychology has helped me understand how people make decisions1"
+  },
+  {
+    "objectID": "blog/2023-10-23-first-post/index.html#part-2",
+    "href": "blog/2023-10-23-first-post/index.html#part-2",
+    "title": "First Blog Post!",
+    "section": "Part 2",
+    "text": "Part 2\nHopefully you enjoyed reading this!"
+  },
+  {
+    "objectID": "blog/2023-10-23-first-post/index.html#footnotes",
+    "href": "blog/2023-10-23-first-post/index.html#footnotes",
+    "title": "First Blog Post!",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nI did a research proposal about the effect of message framing on agreement to climate change policy↩︎"
+  },
+  {
+    "objectID": "blog/2023-12-5-houston-blackouts/index.html",
+    "href": "blog/2023-12-5-houston-blackouts/index.html",
+    "title": "Analysis of Houston Blackouts",
+    "section": "",
+    "text": "Investigated the socioeconomic factors associated with occurrence of blackouts in Houston, Texas metropolitan area that influenced recovery post blackouts.\n\n\nIn February 2021, Texas experienced multiple winter storms that led to power outages across the state and left over 4.5 million homes and businesses without power1."
+  },
+  {
+    "objectID": "blog/2023-12-5-houston-blackouts/index.html#project-background",
+    "href": "blog/2023-12-5-houston-blackouts/index.html#project-background",
+    "title": "Analysis of Houston Blackouts",
+    "section": "",
+    "text": "In February 2021, Texas experienced multiple winter storms that led to power outages across the state and left over 4.5 million homes and businesses without power1."
+  },
+  {
+    "objectID": "blog/2023-12-5-houston-blackouts/index.html#sources",
+    "href": "blog/2023-12-5-houston-blackouts/index.html#sources",
+    "title": "Analysis of Houston Blackouts",
+    "section": "Sources",
+    "text": "Sources\nLIGHT DATA\nThe VIIRS data is distributed in 10x10 degree tiles in sinusoidal equal-area projection. They are identified by horizontal (h) and vertical (v) position in the grid. Houston is included in two tiles: h08v05 and h08v06. We can access tiles through NASA’s Level-1 and Atmospheric Archive & Distribution System Distributed Active Archive Center (LAADS DAAC). Since we have two dates, we need to access these tiles on each day.\n\n\nROAD AND BUILDING DATA\nSince highways account for a large amount of night lights, we want to exclude areas near highways to prevent falsely identifying areas with reduced traffic as areas without power. A shapefile with all of the highways in Texas was prepared by Geofabrik’s download sites, and we compiled a subset of roads that intersect the Houston metropolitan area in a Geopackage (.gpkg file). We prepared a GeoPackage with only houses in the Houston Metropolitan Area using building data from OpenStreetMap which was also provided by Geofabrik.\n\n\nSOCIOECONOMIC DATA\nWe used the U.S. Census Bureau’s American Community Survey for census tracts in 2019 as a proxy for socioeconomic information at the county level. This data is stored in a folder: ACS_2019_5YR_TRACT_48.gdb which has layers that can be accessed using st_layers(). Each layer is a subset of the fields contained in ACS metadata.\nSince the layers are separate, to access the ACS attributes associated with the geemetries you have to combine them into a single feature layer."
+  },
+  {
+    "objectID": "blog/2023-12-5-houston-blackouts/index.html#analysis",
+    "href": "blog/2023-12-5-houston-blackouts/index.html#analysis",
+    "title": "Analysis of Houston Blackouts",
+    "section": "Analysis",
+    "text": "Analysis"
+  },
+  {
+    "objectID": "blog/2023-12-5-houston-blackouts/index.html#results",
+    "href": "blog/2023-12-5-houston-blackouts/index.html#results",
+    "title": "Analysis of Houston Blackouts",
+    "section": "Results",
+    "text": "Results\nFrom the visualizations above, there was no difference in the median income distribution of counties that experienced blackouts and those that did not experience blackouts.\nThe map shows that census blocks affected by blackouts seem to congregate closer to the center of Houston’s metropolitan area. One issue with this analysis is that the distribution of census blocks is not uniform over the Houston area, so we can only say that it looks like more of the census tracts in the center of the metropolitan area were affected by blackouts, but the distribution of the blackouts extends outwards.\nThe box plot above shows that there is not a big difference in the median income distribution of census tracts that were affected by blackouts and those that were not affected. This distribution represents the aggregate of median income in each census tact which means that it is at a lower resolution than the blackout data. This has a potential to erase spatial patters within the census tracts that may represent a more accurate relationship between income and blackouts.\nMore exploration of income distribution at a finer spatial resolution would be beneficial to understand any economic disparities in the preparedness for buildings to handle winter storms in Houston, Texas."
+  },
+  {
+    "objectID": "blog/2023-12-5-houston-blackouts/index.html#footnotes",
+    "href": "blog/2023-12-5-houston-blackouts/index.html#footnotes",
+    "title": "Analysis of Houston Blackouts",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nWikipedia. 2021. “2021 Texas power crisis.” Last modified October 2, 2021. https://en.wikipedia.org/wiki/2021_Texas_power_crisis.↩︎"
   }
 ]
