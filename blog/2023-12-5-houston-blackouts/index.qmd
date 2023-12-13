@@ -12,6 +12,7 @@ draft: false
 toc: TRUE
 
 ---
+
 # Research Question
 
 Investigated the socioeconomic factors associated with occurrence of blackouts in Houston, Texas metropolitan area that influenced recovery post blackouts. 
