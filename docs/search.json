@@ -32,14 +32,14 @@
     "href": "blog/2023-13-23/thomas-fire.html",
     "title": "Analysis of Air Quality from Thomas Fire in Santa Barbara",
     "section": "",
-    "text": "Time series of AQI and refrence to location that Thomas Fire took place."
+    "text": "The Thomas Fire in 2017, image from NASA Modis Satellite."
   },
   {
     "objectID": "blog/2023-13-23/thomas-fire.html#about",
     "href": "blog/2023-13-23/thomas-fire.html#about",
     "title": "Analysis of Air Quality from Thomas Fire in Santa Barbara",
     "section": "About",
-    "text": "About\nIn this notebook I will investigate the Thomas Fire that occured in California in 2017. I will create a time series graph to visualize the impact of the fire on the air quality index (AQI) of Santa Barbara County, and a false color image to understand the extent of the fire."
+    "text": "About\nIn this blog I will investigate the Thomas Fire that occured in California in 2017. I will create a time series graph to visualize the impact of the fire on the air quality index (AQI) of Santa Barbara County, and a false color image to understand the extent of the fire."
   },
   {
     "objectID": "blog/2023-13-23/thomas-fire.html#highlights",
