@@ -1,0 +1,184 @@
+[
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Analysis of Air Quality from Thomas Fire in Santa Barbara\n\n\n\n\n\n\n\nGeospatial\n\n\nQuarto\n\n\nPython\n\n\nMEDS\n\n\n\n\nExploring the effect of the Thomas Fire on Air Quality in Santa Barbara in 2017.\n\n\n\n\n\n\nDec 13, 2023\n\n\nLuna Herschenfeld-Catalán\n\n\n\n\n\n\n  \n\n\n\n\nCauses of Groundwater Level Decline in the Qazvin Aquifer, Iran\n\n\n\n\n\n\n\nGeospatial\n\n\nQuarto\n\n\nR\n\n\nMEDS\n\n\n\n\nTime Series Analysis on Effect of Precipitation Changes and Agricultural Production on Groundwater level changes in the Qazvin Plain, Iran from 1984-2019.\n\n\n\n\n\n\nDec 12, 2023\n\n\nLuna Herschenfeld-Catalán\n\n\n\n\n\n\n  \n\n\n\n\nAnalysis of Houston Blackouts\n\n\n\n\n\n\n\nGeospatial\n\n\nQuarto\n\n\nR\n\n\nMEDS\n\n\n\n\nInvestigating socioeconomic factors in the Houston metropolitan area in the aftermath of two winter storms in February, 2021.\n\n\n\n\n\n\nDec 5, 2023\n\n\nLuna Herschenfeld-Catalán\n\n\n\n\n\n\n  \n\n\n\n\nFirst Blog Post!\n\n\n\n\n\n\n\nQuarto\n\n\nMEDS\n\n\nWorkshop\n\n\n\n\nSome thoughts about what I want to do\n\n\n\n\n\n\nOct 23, 2023\n\n\nLuna Catalan\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Master of Environmental Data Science, Bren (2024)\nEnvironmental Science and Psychological Brain Sciences, UCSB (2019)"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About",
+    "section": "",
+    "text": "Master of Environmental Data Science, Bren (2024)\nEnvironmental Science and Psychological Brain Sciences, UCSB (2019)"
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "About",
+    "section": "Experience",
+    "text": "Experience\nThis page is under construction, check back in soon :)"
+  },
+  {
+    "objectID": "blog/2023-13-23/thomas-fire.html",
+    "href": "blog/2023-13-23/thomas-fire.html",
+    "title": "Analysis of Air Quality from Thomas Fire in Santa Barbara",
+    "section": "",
+    "text": "The Thomas Fire in 2017, image from NASA Modis Satellite."
+  },
+  {
+    "objectID": "blog/2023-13-23/thomas-fire.html#project-background",
+    "href": "blog/2023-13-23/thomas-fire.html#project-background",
+    "title": "Analysis of Air Quality from Thomas Fire in Santa Barbara",
+    "section": "Project background",
+    "text": "Project background\nIn this blog I will investigate the Thomas Fire that occured in California in 2017. The Thomas Fire occured in 2017 and burned for over 40 days. The fire destroyed over 280,00 acres, destroyed 1,063 structures and resulted in one civilian and one firefighter fatality (VCFD, 2019). Understanding the impact on Air Quality is important for public health advisories, and planning public and emergency response when the next fire occurs.\nI will create a time series graph to visualize the impact of the fire on the air quality index (AQI) of Santa Barbara County, and a false color image to understand the extent of the fire.\nThis analysis can be accessed at the repo here: Repository link"
+  },
+  {
+    "objectID": "blog/2023-13-23/thomas-fire.html#highlights",
+    "href": "blog/2023-13-23/thomas-fire.html#highlights",
+    "title": "Analysis of Air Quality from Thomas Fire in Santa Barbara",
+    "section": "Highlights",
+    "text": "Highlights\n\nData wrangling and exploration using pandas\nGeospatial analysis of false and true color images with geopandas and rioxarray\nCreating visualizations to give context for AQI measures as a result of the Thomas Fire"
+  },
+  {
+    "objectID": "blog/2023-13-23/thomas-fire.html#data-information",
+    "href": "blog/2023-13-23/thomas-fire.html#data-information",
+    "title": "Analysis of Air Quality from Thomas Fire in Santa Barbara",
+    "section": "Data Information",
+    "text": "Data Information\nDataset 1: AQI\nIn this task you will use Air Quality Index (AQI) data from the US Environmental Protection Agency to visualize the impact on the AQI of the 2017 Thomas Fire in Santa Barbara County.\nDataset 2: Landsat\nA simplified collection of bands (red, green, blue, near-infrared and shortwave infrared) from the Landsat Collection 2 Level-2 atmosperically corrected surface reflectance data, collected by the Landsat 8 satellite.\nDataset 3:\nA shapefile of fire perimeters in California during 2017. The complete file can be accessed in the CA state geoportal."
+  },
+  {
+    "objectID": "blog/2023-13-23/thomas-fire.html#data-selection",
+    "href": "blog/2023-13-23/thomas-fire.html#data-selection",
+    "title": "Analysis of Air Quality from Thomas Fire in Santa Barbara",
+    "section": "Data Selection",
+    "text": "Data Selection\nNow that we have a clean dataframe, we want to be able to select AQI information for Santa Barbara. We also dont want a lot of the other county information since we are only interested in SB, so we can drop those columns.\nSince we are interested in the AQI over time, we want to make sure that we can plot the time series correctly. To do that we want to check our data types to make sure that the date column is in the right format.\n\n# select only SB county and drop column names\naqi_sb = aqi[aqi.county_name == 'Santa Barbara'].drop(['state_name', # drop these columns \n                                                       'county_name', \n                                                       'state_code', \n                                                       'county_code'], axis = 1)\n\naqi_sb.dtypes\n\ndate                         object\naqi                           int64\ncategory                     object\ndefining_parameter           object\ndefining_site                object\nnumber_of_sites_reporting     int64\ndtype: object\n\n\nAs we can see above, the date column is not in the correct format. Since we are interested in plotting this data as time series, we want to make sure that the date column is in datetime so that it can plot correctly.\nYou can see that the date is now in datetime format!\n\n# update date column to datetime type\naqi_sb['date'] = pd.to_datetime(aqi_sb['date'])\n\naqi_sb.dtypes\n\ndate                         datetime64[ns]\naqi                                   int64\ncategory                             object\ndefining_parameter                   object\ndefining_site                        object\nnumber_of_sites_reporting             int64\ndtype: object"
+  },
+  {
+    "objectID": "blog/2023-13-23/thomas-fire.html#data-manipulation",
+    "href": "blog/2023-13-23/thomas-fire.html#data-manipulation",
+    "title": "Analysis of Air Quality from Thomas Fire in Santa Barbara",
+    "section": "Data Manipulation",
+    "text": "Data Manipulation\nIn this step we are going to prepare the data for plotting by making calculating the 5 day average rolling mean to smooth the data and make it more understandable visually.\nTo make plotting easier, we will first det the date column as the index. Then, we want to create a new column with the new 5 day average mean.\n\n# set date as index for easy plotting\naqi_sb = aqi_sb.set_index('date')\n\n# create new column with 5 day mean\naqi_sb['five_day_average'] = aqi_sb.aqi.rolling('5D').mean()"
+  },
+  {
+    "objectID": "blog/2023-13-23/thomas-fire.html#prepare-ca-fire-data",
+    "href": "blog/2023-13-23/thomas-fire.html#prepare-ca-fire-data",
+    "title": "Analysis of Air Quality from Thomas Fire in Santa Barbara",
+    "section": "Prepare CA Fire Data",
+    "text": "Prepare CA Fire Data\nFirst, we are going to compare the crs of the landsat and fire data to see if we have to make any updates. Since these datasets have difference crs, we are are going to reproject the ca_fire data to the landsat data.\n\n# check crs\nprint(f\"ca_fire: {ca_fire.crs}\\nlandsat: {landsat.rio.crs}\")\n\nca_fire: EPSG:3857\nlandsat: EPSG:32611\n\n\n\n# update fire crs to landsat crs\nca_fire = ca_fire.to_crs(\"EPSG:32611\")\n\nNow that that is done, we want to make sure that the ca_fire data is easy to work with.\nThe column names are all in caps and we have decided that that’s annoying, so we want to update the column names.\n\n# check the columns and the number of values in the ca fire data frame\nprint(\"the column names are: \", ca_fire.columns)\n\n# set all column names to lower case for easier wrangling \nca_fire.columns = ca_fire.columns.str.lower()\n\nthe column names are:  Index(['index', 'OBJECTID', 'YEAR_', 'STATE', 'AGENCY', 'UNIT_ID', 'FIRE_NAME',\n       'INC_NUM', 'ALARM_DATE', 'CONT_DATE', 'CAUSE', 'C_METHOD', 'OBJECTIVE',\n       'GIS_ACRES', 'COMMENTS', 'COMPLEX_NA', 'COMPLEX_IN', 'IRWINID',\n       'FIRE_NUM', 'DECADES', 'SHAPE_Leng', 'SHAPE_Area', 'geometry'],\n      dtype='object')"
+  },
+  {
+    "objectID": "blog/2023-13-23/thomas-fire.html#data-selection-1",
+    "href": "blog/2023-13-23/thomas-fire.html#data-selection-1",
+    "title": "Analysis of Air Quality from Thomas Fire in Santa Barbara",
+    "section": "Data selection",
+    "text": "Data selection\nWe are only interested in mapping the Thomas fire that we have the AQI data for. In this next step, we want to only choose the Thomas fires from the california fire dataset. This will result in a single polygon:\n\n# select only the Thomas Fires\nthomas_fire = ca_fire[ca_fire.fire_name == 'THOMAS']\nthomas_fire\n\n\n\n\n\n\n\n\nindex\nobjectid\nyear_\nstate\nagency\nunit_id\nfire_name\ninc_num\nalarm_date\ncont_date\n...\ngis_acres\ncomments\ncomplex_na\ncomplex_in\nirwinid\nfire_num\ndecades\nshape_leng\nshape_area\ngeometry\n\n\n\n\n436\n20274\n41874\n2017\nCA\nUSF\nVNC\nTHOMAS\n00003583\n2017-12-04\n2018-01-12\n...\n281790.875\nCONT_DATE based on Inciweb\nNaN\nNaN\nNaN\nNaN\n2010\n540531.887458\n1.681106e+09\nMULTIPOLYGON (((259241.263 3814482.913, 259193...\n\n\n\n\n1 rows × 23 columns"
+  },
+  {
+    "objectID": "blog/2023-12-12/index.html",
+    "href": "blog/2023-12-12/index.html",
+    "title": "Causes of Groundwater Level Decline in the Qazvin Aquifer, Iran",
+    "section": "",
+    "text": "Background\n\n\nQuestion\n\n\nAnalysis\n\n\nConclusions\n\n\nFuture Steps\n\n\n\n\nCitationBibTeX citation:@online{herschenfeld-catalán2023,\n  author = {Herschenfeld-Catalán, Luna},\n  title = {Causes of {Groundwater} {Level} {Decline} in the {Qazvin}\n    {Aquifer,} {Iran}},\n  date = {2023-12-12},\n  url = {https://lunacatalan.github.io/blog/12-12-2023-groundwater-decline/},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nHerschenfeld-Catalán, Luna. 2023. “Causes of Groundwater Level\nDecline in the Qazvin Aquifer, Iran.” December 12, 2023. https://lunacatalan.github.io/blog/12-12-2023-groundwater-decline/."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "",
+    "section": "",
+    "text": "I am currently a masters student at the Bren School of Environmental Science and Management. I want to be at the intersection of data and policy to foster effective communication in the development of solutions. My main areas of interest are water, equitable access to affordable housing and education, and urban design. When I’m not sciencing, I can be found dancing, running, swimming, or perfecting my focaccia recipe (it’s almost there)."
+  },
+  {
+    "objectID": "index.html#luna-herschenfeld-catalán",
+    "href": "index.html#luna-herschenfeld-catalán",
+    "title": "",
+    "section": "",
+    "text": "I am currently a masters student at the Bren School of Environmental Science and Management. I want to be at the intersection of data and policy to foster effective communication in the development of solutions. My main areas of interest are water, equitable access to affordable housing and education, and urban design. When I’m not sciencing, I can be found dancing, running, swimming, or perfecting my focaccia recipe (it’s almost there)."
+  },
+  {
+    "objectID": "blog/2023-10-23-first-post/index.html",
+    "href": "blog/2023-10-23-first-post/index.html",
+    "title": "First Blog Post!",
+    "section": "",
+    "text": "I would love to work at the intersection between data science and policy.\nWhy?\n\nScience communication is hard\nPeople don’t know how to talk to each other\nI am good with people, and my degree in psychology has helped me understand how people make decisions1"
+  },
+  {
+    "objectID": "blog/2023-10-23-first-post/index.html#part-1",
+    "href": "blog/2023-10-23-first-post/index.html#part-1",
+    "title": "First Blog Post!",
+    "section": "",
+    "text": "I would love to work at the intersection between data science and policy.\nWhy?\n\nScience communication is hard\nPeople don’t know how to talk to each other\nI am good with people, and my degree in psychology has helped me understand how people make decisions1"
+  },
+  {
+    "objectID": "blog/2023-10-23-first-post/index.html#part-2",
+    "href": "blog/2023-10-23-first-post/index.html#part-2",
+    "title": "First Blog Post!",
+    "section": "Part 2",
+    "text": "Part 2\nHopefully you enjoyed reading this!"
+  },
+  {
+    "objectID": "blog/2023-10-23-first-post/index.html#footnotes",
+    "href": "blog/2023-10-23-first-post/index.html#footnotes",
+    "title": "First Blog Post!",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nI did a research proposal about the effect of message framing on agreement to climate change policy↩︎"
+  },
+  {
+    "objectID": "blog/2023-12-5-houston-blackouts/index.html",
+    "href": "blog/2023-12-5-houston-blackouts/index.html",
+    "title": "Analysis of Houston Blackouts",
+    "section": "",
+    "text": "What socioeconomic factors are correlated with the occurrence of blackouts in Houston, Texas?"
+  },
+  {
+    "objectID": "blog/2023-12-5-houston-blackouts/index.html#research-question",
+    "href": "blog/2023-12-5-houston-blackouts/index.html#research-question",
+    "title": "Analysis of Houston Blackouts",
+    "section": "",
+    "text": "What socioeconomic factors are correlated with the occurrence of blackouts in Houston, Texas?"
+  },
+  {
+    "objectID": "blog/2023-12-5-houston-blackouts/index.html#project-background",
+    "href": "blog/2023-12-5-houston-blackouts/index.html#project-background",
+    "title": "Analysis of Houston Blackouts",
+    "section": "Project Background",
+    "text": "Project Background\nIn February 2021, Texas experienced multiple winter storms that led to power outages across the state and left over 4.5 million homes and businesses without power1. In light of this disaster, understanding the different factors that influence recovery is important to implement management strategies if this happens again. Exploring the socioeconomic factors of those that experienced blackouts is the first step to understanding paths to recovery."
+  },
+  {
+    "objectID": "blog/2023-12-5-houston-blackouts/index.html#goals",
+    "href": "blog/2023-12-5-houston-blackouts/index.html#goals",
+    "title": "Analysis of Houston Blackouts",
+    "section": "Goals",
+    "text": "Goals\n\nInvestigate socioeconomic factors associated with occurrence of blackouts in Houston, Texas metropolitan area.\nExplore the socioeconomic factors that influenced recovery post blackouts in the Houston"
+  },
+  {
+    "objectID": "blog/2023-12-5-houston-blackouts/index.html#takeaways",
+    "href": "blog/2023-12-5-houston-blackouts/index.html#takeaways",
+    "title": "Analysis of Houston Blackouts",
+    "section": "Takeaways",
+    "text": "Takeaways\n\nThere was no difference in the median income distribution of counties that experienced blackouts and those that did not experience blackouts.\nMore exploration of income distribution at a finer spatial resolution would be beneficial to understand any economic disparities in the preparedness for buildings to handle winter storms in Houston, Texas."
+  },
+  {
+    "objectID": "blog/2023-12-5-houston-blackouts/index.html#sources",
+    "href": "blog/2023-12-5-houston-blackouts/index.html#sources",
+    "title": "Analysis of Houston Blackouts",
+    "section": "Sources",
+    "text": "Sources\nLIGHT DATA\nThe VIIRS data is distributed in 10x10 degree tiles in sinusoidal equal-area projection. They are identified by horizontal (h) and vertical (v) position in the grid. Houston is included in two tiles: h08v05 and h08v06. We can access tiles through NASA’s Level-1 and Atmospheric Archive & Distribution System Distributed Active Archive Center (LAADS DAAC). Since we have two dates, we need to access these tiles on each day.\n\n\nROAD AND BUILDING DATA\nSince highways account for a large amount of night lights, we want to exclude areas near highways to prevent falsely identifying areas with reduced traffic as areas without power. A shapefile with all of the highways in Texas was prepared by Geofabrik’s download sites, and we compiled a subset of roads that intersect the Houston metropolitan area in a Geopackage (.gpkg file). We prepared a GeoPackage with only houses in the Houston Metropolitan Area using building data from OpenStreetMap which was also provided by Geofabrik.\n\n\nSOCIOECONOMIC DATA\nWe used the U.S. Census Bureau’s American Community Survey for census tracts in 2019 as a proxy for socioeconomic information at the county level. This data is stored in a folder: ACS_2019_5YR_TRACT_48.gdb which has layers that can be accessed using st_layers(). Each layer is a subset of the fields contained in ACS metadata.\nSince the layers are separate, to access the ACS attributes associated with the geemetries you have to combine them into a single feature layer."
+  },
+  {
+    "objectID": "blog/2023-12-5-houston-blackouts/index.html#footnotes",
+    "href": "blog/2023-12-5-houston-blackouts/index.html#footnotes",
+    "title": "Analysis of Houston Blackouts",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nWikipedia. 2021. “2021 Texas power crisis.” Last modified October 2, 2021. https://en.wikipedia.org/wiki/2021_Texas_power_crisis.↩︎"
+  }
+]

@@ -6,7 +6,7 @@ author: "Luna Herschenfeld-Catalán"
 date: 12-05-2023
 categories: [Geospatial, Quarto, R, MEDS] # self-defined categories
 citation: 
-  url: https://lunacatalan.github.io/blog/2023-12-5-houston-blackouts/ 
+  url: https://lunacatalan.github.io/blog/2023-12-5-houston-blackouts/index.html 
 #image: preview-image.png
 format:
   html:
