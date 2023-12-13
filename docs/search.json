@@ -39,7 +39,7 @@
     "href": "blog/2023-13-23/thomas-fire.html#about",
     "title": "Analysis of Air Quality from Thomas Fire in Santa Barbara",
     "section": "About",
-    "text": "About\nIn this blog I will investigate the Thomas Fire that occured in California in 2017. I will create a time series graph to visualize the impact of the fire on the air quality index (AQI) of Santa Barbara County, and a false color image to understand the extent of the fire."
+    "text": "About\nIn this blog I will investigate the Thomas Fire that occured in California in 2017. I will create a time series graph to visualize the impact of the fire on the air quality index (AQI) of Santa Barbara County, and a false color image to understand the extent of the fire.\nThis analysis can be accessed at the repo here: Repository link"
   },
   {
     "objectID": "blog/2023-13-23/thomas-fire.html#highlights",
