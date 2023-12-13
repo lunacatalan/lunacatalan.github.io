@@ -12,6 +12,7 @@ format:
   html:
     code-fold: true
 draft: false
+image: 
 toc: TRUE
 bibliography: references.bib
 ---
