@@ -8,23 +8,35 @@ categories: [Geospatial, Quarto, R, MEDS] # self-defined categories
 citation: 
   url: https://lunacatalan.github.io/blog/2023-12-5-houston-blackouts/ 
 #image: preview-image.png
+format:
+  html:
+    code-fold: true
 draft: false
 toc: TRUE
-
+bibliography: references.bib
 ---
 
-# Research Question
+## Research Question
 
-Investigated the socioeconomic factors associated with occurrence of blackouts in Houston, Texas metropolitan area that influenced recovery post blackouts. 
+What socioeconomic factors are correlated with the occurrence of blackouts in Houston, Texas?
 
-## Project Background 
+## Project Background
 
-In February 2021, Texas experienced multiple winter storms that led to power outages across the state and left over 4.5 million homes and businesses without power[^1].
+In February 2021, Texas experienced multiple winter storms that led to power outages across the state and left over 4.5 million homes and businesses without power[^1]. In light of this disaster, understanding the different factors that influence recovery is important to implement management strategies if this happens again. Exploring the socioeconomic factors of those that experienced blackouts is the first step to understanding paths to recovery.
 
 [^1]: Wikipedia. 2021. "2021 Texas power crisis." Last modified October 2, 2021. <https://en.wikipedia.org/wiki/2021_Texas_power_crisis>.
 
+## Goals
 
-# Data 
+-   Investigate socioeconomic factors associated with occurrence of blackouts in Houston, Texas metropolitan area.
+-   Explore the socioeconomic factors that influenced recovery post blackouts in the Houston
+
+## Takeaways
+
+-   There was no difference in the median income distribution of counties that experienced blackouts and those that did not experience blackouts.
+-   More exploration of income distribution at a finer spatial resolution would be beneficial to understand any economic disparities in the preparedness for buildings to handle winter storms in Houston, Texas.
+
+# Data
 
 ## Sources
 
@@ -44,15 +56,277 @@ We used the [U.S. Census Bureau's American Community Survey](https://www.census.
 
 Since the layers are separate, to access the ACS attributes associated with the geemetries you have to combine them into a single feature layer.\
 
-## Analysis
+# Analysis
 
-## Results 
+The steps to this analysis:
 
-From the visualizations above, there was no difference in the median income distribution of counties that experienced blackouts and those that did not experience blackouts. 
+### Step 1: Where did blackouts occur in Houston?
+
+Use the light data to determine which homes experienced a blackout. I combined the rasters using `st_mosaic` from the `stars` package to get a complete picture of the lights in Texas on the 7th, before the storm, and on the 16th, after the storms. Then I reclassified the lights so that any are with a change (aka a drop) of 200 nW cm\^-2\^sr\^-1\^ or more experienced a blackout. Since I am only interested in Houston, I cropped the blackout data to just the Houston Metropolitan Area, and removed the highways so that they wouldn't interfere with the blackout data.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, include = FALSE, message = FALSE, warning=FALSE}
+# load libraries
+library(tidyverse)
+library(sf)
+library(stars)
+library(raster) # this is going out of commission 
+library(ggspatial)
+
+```
+
+Reading in the light data:
+
+```{r include=TRUE, message = FALSE, warning = FALSE}
+# read in night VNP46A1 
+
+# tile h08v05, collected on 2021-02-07
+houston_5_7 <- read_stars("/Users/lunacatalan/Documents/dev/lunacatalan.github.io/blog/2023-12-5-houston-blackouts/data/VNP46A1/VNP46A1.A2021038.h08v05.001.2021039064328.tif")
+
+# tile h08v06, collected on 2021-02-07
+houston_6_7 <- read_stars("/Users/lunacatalan/Documents/dev/lunacatalan.github.io/blog/2023-12-5-houston-blackouts/data/VNP46A1/VNP46A1.A2021038.h08v06.001.2021039064329.tif")
+
+# tile h08v05, collected on 2021-02-16
+houston_5_16 <- read_stars("/Users/lunacatalan/Documents/dev/lunacatalan.github.io/blog/2023-12-5-houston-blackouts/data/VNP46A1/VNP46A1.A2021047.h08v05.001.2021048091106.tif")
+
+# tile h08v06, collected on 2021-02-16
+houston_6_16 <- read_stars("/Users/lunacatalan/Documents/dev/lunacatalan.github.io/blog/2023-12-5-houston-blackouts/data/VNP46A1/VNP46A1.A2021047.h08v06.001.2021048091105.tif")
+
+# combined tiles for 2021 - 07
+h_7 <- st_mosaic(houston_5_7, houston_6_7)
+
+# combines tiles for 2021 - 16
+h_16 <- st_mosaic(houston_5_16, houston_6_16)
+```
+
+Calculating the change:
+
+```{r include=TRUE, message = FALSE, warning = FALSE}
+# subtract the raster from the 16th from the 7th to determine the change between the two 
+change <- h_7 - h_16
+
+# create reclassify object; cut at 200 to infinity
+rcl_change <- cut(change, 
+                  c(200, Inf), # anything below infinity is NA
+                  labels = 'power_out')
+
+# vectorize mask to be able to use it with the other raster 
+mask <- st_as_sf(rcl_change) %>% # vectorize blackout 
+  st_make_valid() # fix any invalid geometries
+```
+
+Selecting Houston:
+
+```{r include = FALSE, message = FALSE, warning = FALSE, eval = TRUE}
+# create data frame with the coordinates for the Houston metropolitan area
+houston_area <- data.frame(
+    name = c("p1","p2","p3", "p4"),
+    lon = c(-96.5, -96.5, -94.5, -94.5),
+    lat = c(29,  30.5, 30.5, 29))
+
+# make a polygon box with the coordinates
+h_area_polygon = st_polygon(
+     list(
+       cbind(
+         houston_area$lon[c(1,2,3,4,1)], # end with the first coordinates to complete the box
+         houston_area$lat[c(1,2,3,4,1)]) # end with the first coordinates to complete the box
+       )
+    )
+
+# set crs for the box 
+h_box <- st_sfc(h_area_polygon, 
+                crs = st_crs(mask)) # set crs to the same as the mask
+
+# crop the blackout mask to the boundaries of the Houston area defined above by the box
+h_crop <- st_crop(mask, h_box) %>% 
+  st_transform(crs = "epsg:3083") # transform to crs EPSG:3083
+
+```
+
+Removing highways:
+
+```{r include=FALSE, message=FALSE, warning=FALSE, eval = TRUE}
+# make query to select motorway from the data
+query <- "SELECT * FROM gis_osm_roads_free_1 WHERE fclass='motorway'"
+
+# use the query to select the highways from the roads package
+highways <- st_read("data/gis_osm_roads_free_1.gpkg", 
+                    query = query) %>% 
+  st_transform(crs = "epsg:3083") # re-project to new crs
+
+# create buffer around highways 
+buffer <- highways %>% 
+  st_buffer(200) %>%  # set buffer of 200m around the roads
+  st_union() # dissolve buffers so that the buffer is a single layer
+
+# creates new geometries instead of filtering completely, 
+hwy_buffer <- st_difference(h_crop, buffer)
+
+names(hwy_buffer) <- c("Houston Homes With Highway Buffer Excluded", "geometry")
+```
+
+```{r include=TRUE, message=FALSE, warning=FALSE, eval = TRUE}
+plot(hwy_buffer)
+```
+
+These are the homes in Houston, excluding the homes that are within 200m of a highway.
+
+### Step 2: What homes experienced blackouts?
+
+I wanted to find the homes that were impacted by blackouts in the Houston Metropolitan Area. I used the building data to identify the homes that experienced blackouts
+
+```{r include=FALSE, message = FALSE, warning=FALSE, eval = TRUE}
+# create query to call 
+query <- "SELECT * FROM gis_osm_buildings_a_free_1 WHERE (type IS NULL AND name IS NULL)"
+```
+
+```{r include=TRUE, message = FALSE, warning=FALSE, eval = TRUE}
+buildings <- st_read("data/gis_osm_buildings_a_free_1.gpkg", 
+                     query = query) %>% 
+  st_transform(crs = "epsg:3083")
+
+# when we use intersects if these geometry share any space
+homes_b_out <- buildings[hwy_buffer, , # use indexing: select the rows, all columns of buffer
+                     op = st_intersects, # choose option intersect select those that share any space
+                     drop = FALSE] # don't drop geometries
+
+```
+
+### Step 3: What was the median income where blackouts occured?
+
+I also wanted to investigate socioeconomic factors that could impact the recovery of these homes that experiences blackouts. To achieve this I joined the census data to understand the median income of those that experienced blackouts. I used the U.S. Census Bureau's American Community Survey information to find county level data about the **median income** of homes in Houston that experienced blackouts. This could show a potential skew as to who is experiencing these events.
+
+I want to be able to compare the incomes of census tracts that had homes that experienced a blackout, and those that did not.
+
+Reading in Houston census data:
+
+```{r include=FALSE, message=FALSE, warning=FALSE, eval = TRUE}
+# read in the layers of the file
+texas_layers <- st_layers("data/ACS_2019_5YR_TRACT_48_TEXAS.gdb")
+
+# look at what layers are included in the file
+## texas_layers
+
+# store geometries
+geom <- st_read("data/ACS_2019_5YR_TRACT_48_TEXAS.gdb",
+                layer = "ACS_2019_5YR_TRACT_48_TEXAS") %>%
+  mutate(geoid = GEOID_Data) # make new column with same values as the median_income
+
+# store median income
+median_income <- st_read("data/ACS_2019_5YR_TRACT_48_TEXAS.gdb",
+                         layer = "X19_INCOME",
+                         query = "SELECT B19013e1, GEOID FROM X19_INCOME") %>% 
+  mutate(geoid = GEOID)
+```
+
+```{r include=TRUE, message=FALSE, warning=FALSE, eval = TRUE}
+# Join the geometry and median income layer together
+median_inc_geom <- left_join(geom, median_income, by = "geoid") %>%
+  st_transform(crs = "epsg:3083")
+
+h_box <- h_box %>% 
+  st_transform(crs = "epsg:3083")
+
+# crop census to Houston
+h_median <- st_crop(median_inc_geom, h_box)
+
+# find where census tracts and the buildings share any space
+building_census <- h_median[homes_b_out, , # use indexing: select the rows, all columns of homes in blackout areas
+                     op = st_intersects]
+```
+
+### Step 4: Visualizations of median income and blackouts
+
+To understand the distribution of blackout areas, I created a map of median incomes in the Houston Metropolitan Area, and overlayed points to mark the census blocks that experienced a blackout.
+
+```{r, include = FALSE, message=FALSE, warning=FALSE, eval = TRUE}
+
+# centroid of tracts experiencing blackouts 
+census_centroid <- st_centroid(building_census)
+
+median_income_plot <- ggplot(data = h_median) + # map all the census tracks 
+  geom_sf(aes(fill = B19013e1)) + # fill in by medium income 
+  geom_sf(data = census_centroid, # plot census centroid 
+          alpha = 0.6,
+          size = 0.4,
+          aes(color = "STATEFP")) + # needed to include in legend
+  scale_color_manual(values = c("STATEFP" = "black"),
+                     labels = "Census tract that \nexperienced blackouts") +
+  paletteer::scale_fill_paletteer_c("grDevices::Oslo") +
+  annotation_scale(plot_unit = "m", # edit units of scale bar - may auto fill
+                   location = "br") + 
+  annotation_north_arrow(location = "br",
+                         style = ggspatial::north_arrow_nautical(),
+                         pad_x = unit(0.1, "in"), # move north arrow
+                         pad_y = unit(0.3, "in")) +
+  theme(panel.background = element_rect(fill = "white"),
+        legend.position = "right",
+        legend.title = element_text(size = 10),
+        axis.ticks = element_blank()) + # remove axis ticks 
+labs(title = "Effect of Median Income on Blackout Areas in \nMetropolitan Houston Area, Texas",
+     fill = "Median Income by Census Tract",
+     color = "Blackouts")
+```
+
+```{r, include = TRUE, message=FALSE, warning=FALSE, eval = TRUE}
+# plot it!
+median_income_plot
+```
+
+This is hard to understand if there is any distribution since the data is all collected in the center of the metropolitan area. Instead, plot the income distribution of census tracts that had blackouts and those that did not.
+
+```{r include=FALSE, message = FALSE, warning=FALSE}
+# select values from h_median that are not in building_census (census tracts with blackouts)
+no_blackouts <- subset(h_median, 
+                       !(geoid %in% building_census$geoid)) %>% # remove the ones in 
+  mutate(blackouts = "none") %>% # new column with group
+  st_drop_geometry() # drop geometry to treat this as a dataframe
+
+# make dataframe of census tracts that experienced blackouts
+blackout_census <- building_census %>% 
+  mutate(blackouts = "blackout") %>% # new column with group 
+  st_drop_geometry()
+
+# combine the data frames so that both groups are in the same data frame
+all_tracts <- rbind(no_blackouts, blackout_census) %>% 
+  dplyr::select(B19013e1, blackouts) %>% # select columns of interest
+  drop_na() # drop NA values to be able to plot 
+```
+
+#### Distribution of Median Income
+
+Compare areas that experienced blackouts and areas that did not to see if there is a socioeconomic difference between the two.
+
+```{r include=FALSE, message = FALSE, warning=FALSE, eval = TRUE}
+# plot the distribution of income in impacted and unimpacted tracts
+boxplot <- ggplot() +
+  geom_boxplot(data = all_tracts,
+           aes(x = blackouts, 
+               y = B19013e1,
+               fill = blackouts),
+           show.legend = FALSE) +
+  scale_x_discrete(labels=c("Blackout \nCensus Tracts", "Non-Blackout \nCensus Tracts")) +
+  scale_fill_manual(values = c("#70A7C3FF", "#F8D564FF")) +
+  labs(x = "",
+       y = "Median Income of Census Tract",
+       title = "Distribution of Median Income in Impacted vs Non-Impacted Areas") +
+  theme_minimal()
+```
+
+```{r include=TRUE, message = FALSE, warning=FALSE, eval = TRUE}
+# plot it!
+boxplot
+```
+
+# Conclusions and Future Analysis
+
+From the visualizations above, there was no difference in the median income distribution of counties that experienced blackouts and those that did not experience blackouts.
 
 The map shows that census blocks affected by blackouts seem to congregate closer to the center of Houston's metropolitan area. One issue with this analysis is that the distribution of census blocks is not uniform over the Houston area, so we can only say that it looks like more of the census tracts in the center of the metropolitan area were affected by blackouts, but the distribution of the blackouts extends outwards.
 
 The box plot above shows that there is not a big difference in the median income distribution of census tracts that were affected by blackouts and those that were not affected. This distribution represents the aggregate of median income in each census tact which means that it is at a lower resolution than the blackout data. This has a potential to erase spatial patters within the census tracts that may represent a more accurate relationship between income and blackouts.
 
-More exploration of income distribution at a finer spatial resolution would be beneficial to understand any economic disparities in the preparedness for buildings to handle winter storms in Houston, Texas. 
-
+More exploration of income distribution at a finer spatial resolution would be beneficial to understand any economic disparities in the preparedness for buildings to handle winter storms in Houston, Texas.

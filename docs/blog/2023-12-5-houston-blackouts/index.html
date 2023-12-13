@@ -23,6 +23,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -156,16 +190,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#research-question" id="toc-research-question" class="nav-link active" data-scroll-target="#research-question">Research Question</a>
-  <ul class="collapse">
+  <li><a href="#research-question" id="toc-research-question" class="nav-link active" data-scroll-target="#research-question">Research Question</a></li>
   <li><a href="#project-background" id="toc-project-background" class="nav-link" data-scroll-target="#project-background">Project Background</a></li>
-  </ul></li>
+  <li><a href="#goals" id="toc-goals" class="nav-link" data-scroll-target="#goals">Goals</a></li>
+  <li><a href="#takeaways" id="toc-takeaways" class="nav-link" data-scroll-target="#takeaways">Takeaways</a></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
   <ul class="collapse">
   <li><a href="#sources" id="toc-sources" class="nav-link" data-scroll-target="#sources">Sources</a></li>
-  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   </ul></li>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a>
+  <ul class="collapse">
+  <li><a href="#step-1-where-did-blackouts-occur-in-houston" id="toc-step-1-where-did-blackouts-occur-in-houston" class="nav-link" data-scroll-target="#step-1-where-did-blackouts-occur-in-houston">Step 1: Where did blackouts occur in Houston?</a></li>
+  <li><a href="#step-2-what-homes-experienced-blackouts" id="toc-step-2-what-homes-experienced-blackouts" class="nav-link" data-scroll-target="#step-2-what-homes-experienced-blackouts">Step 2: What homes experienced blackouts?</a></li>
+  <li><a href="#step-3-what-was-the-median-income-where-blackouts-occured" id="toc-step-3-what-was-the-median-income-where-blackouts-occured" class="nav-link" data-scroll-target="#step-3-what-was-the-median-income-where-blackouts-occured">Step 3: What was the median income where blackouts occured?</a></li>
+  <li><a href="#step-4-visualizations-of-median-income-and-blackouts" id="toc-step-4-visualizations-of-median-income-and-blackouts" class="nav-link" data-scroll-target="#step-4-visualizations-of-median-income-and-blackouts">Step 4: Visualizations of median income and blackouts</a></li>
+  </ul></li>
+  <li><a href="#conclusions-and-future-analysis" id="toc-conclusions-and-future-analysis" class="nav-link" data-scroll-target="#conclusions-and-future-analysis">Conclusions and Future Analysis</a></li>
   </ul>
 </nav>
     </div>
@@ -175,13 +215,27 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="research-question" class="level1">
-<h1>Research Question</h1>
-<p>Investigated the socioeconomic factors associated with occurrence of blackouts in Houston, Texas metropolitan area that influenced recovery post blackouts.</p>
+<section id="research-question" class="level2">
+<h2 class="anchored" data-anchor-id="research-question">Research Question</h2>
+<p>What socioeconomic factors are correlated with the occurrence of blackouts in Houston, Texas?</p>
+</section>
 <section id="project-background" class="level2">
 <h2 class="anchored" data-anchor-id="project-background">Project Background</h2>
-<p>In February 2021, Texas experienced multiple winter storms that led to power outages across the state and left over 4.5 million homes and businesses without power<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>In February 2021, Texas experienced multiple winter storms that led to power outages across the state and left over 4.5 million homes and businesses without power<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. In light of this disaster, understanding the different factors that influence recovery is important to implement management strategies if this happens again. Exploring the socioeconomic factors of those that experienced blackouts is the first step to understanding paths to recovery.</p>
 </section>
+<section id="goals" class="level2">
+<h2 class="anchored" data-anchor-id="goals">Goals</h2>
+<ul>
+<li>Investigate socioeconomic factors associated with occurrence of blackouts in Houston, Texas metropolitan area.</li>
+<li>Explore the socioeconomic factors that influenced recovery post blackouts in the Houston</li>
+</ul>
+</section>
+<section id="takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="takeaways">Takeaways</h2>
+<ul>
+<li>There was no difference in the median income distribution of counties that experienced blackouts and those that did not experience blackouts.</li>
+<li>More exploration of income distribution at a finer spatial resolution would be beneficial to understand any economic disparities in the preparedness for buildings to handle winter storms in Houston, Texas.</li>
+</ul>
 </section>
 <section id="data" class="level1">
 <h1>Data</h1>
@@ -200,18 +254,159 @@ ul.task-list li input[type="checkbox"] {
 <p>Since the layers are separate, to access the ACS attributes associated with the geemetries you have to combine them into a single feature layer.<br>
 </p>
 </section>
-<section id="analysis" class="level2">
-<h2 class="anchored" data-anchor-id="analysis">Analysis</h2>
 </section>
-<section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results">Results</h2>
+<section id="analysis" class="level1">
+<h1>Analysis</h1>
+<p>The steps to this analysis:</p>
+<section id="step-1-where-did-blackouts-occur-in-houston" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-where-did-blackouts-occur-in-houston">Step 1: Where did blackouts occur in Houston?</h3>
+<p>Use the light data to determine which homes experienced a blackout. I combined the rasters using <code>st_mosaic</code> from the <code>stars</code> package to get a complete picture of the lights in Texas on the 7th, before the storm, and on the 16th, after the storms. Then I reclassified the lights so that any are with a change (aka a drop) of 200 nW cm^-2^sr^-1^ or more experienced a blackout. Since I am only interested in Houston, I cropped the blackout data to just the Houston Metropolitan Area, and removed the highways so that they wouldn’t interfere with the blackout data.</p>
+<p>Reading in the light data:</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># read in night VNP46A1 </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># tile h08v05, collected on 2021-02-07</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>houston_5_7 <span class="ot">&lt;-</span> <span class="fu">read_stars</span>(<span class="st">"/Users/lunacatalan/Documents/dev/lunacatalan.github.io/blog/2023-12-5-houston-blackouts/data/VNP46A1/VNP46A1.A2021038.h08v05.001.2021039064328.tif"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># tile h08v06, collected on 2021-02-07</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>houston_6_7 <span class="ot">&lt;-</span> <span class="fu">read_stars</span>(<span class="st">"/Users/lunacatalan/Documents/dev/lunacatalan.github.io/blog/2023-12-5-houston-blackouts/data/VNP46A1/VNP46A1.A2021038.h08v06.001.2021039064329.tif"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># tile h08v05, collected on 2021-02-16</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>houston_5_16 <span class="ot">&lt;-</span> <span class="fu">read_stars</span>(<span class="st">"/Users/lunacatalan/Documents/dev/lunacatalan.github.io/blog/2023-12-5-houston-blackouts/data/VNP46A1/VNP46A1.A2021047.h08v05.001.2021048091106.tif"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># tile h08v06, collected on 2021-02-16</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>houston_6_16 <span class="ot">&lt;-</span> <span class="fu">read_stars</span>(<span class="st">"/Users/lunacatalan/Documents/dev/lunacatalan.github.io/blog/2023-12-5-houston-blackouts/data/VNP46A1/VNP46A1.A2021047.h08v06.001.2021048091105.tif"</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># combined tiles for 2021 - 07</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>h_7 <span class="ot">&lt;-</span> <span class="fu">st_mosaic</span>(houston_5_7, houston_6_7)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># combines tiles for 2021 - 16</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>h_16 <span class="ot">&lt;-</span> <span class="fu">st_mosaic</span>(houston_5_16, houston_6_16)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Calculating the change:</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># subtract the raster from the 16th from the 7th to determine the change between the two </span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>change <span class="ot">&lt;-</span> h_7 <span class="sc">-</span> h_16</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># create reclassify object; cut at 200 to infinity</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>rcl_change <span class="ot">&lt;-</span> <span class="fu">cut</span>(change, </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">c</span>(<span class="dv">200</span>, <span class="cn">Inf</span>), <span class="co"># anything below infinity is NA</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">labels =</span> <span class="st">'power_out'</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># vectorize mask to be able to use it with the other raster </span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>mask <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(rcl_change) <span class="sc">%&gt;%</span> <span class="co"># vectorize blackout </span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_make_valid</span>() <span class="co"># fix any invalid geometries</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Selecting Houston:</p>
+<p>Removing highways:</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(hwy_buffer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>These are the homes in Houston, excluding the homes that are within 200m of a highway.</p>
+</section>
+<section id="step-2-what-homes-experienced-blackouts" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-what-homes-experienced-blackouts">Step 2: What homes experienced blackouts?</h3>
+<p>I wanted to find the homes that were impacted by blackouts in the Houston Metropolitan Area. I used the building data to identify the homes that experienced blackouts</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>buildings <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"data/gis_osm_buildings_a_free_1.gpkg"</span>, </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">query =</span> query) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_transform</span>(<span class="at">crs =</span> <span class="st">"epsg:3083"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Reading query `SELECT * FROM gis_osm_buildings_a_free_1 WHERE (type IS NULL AND name IS NULL)'
+from data source `/Users/lunacatalan/Documents/dev/lunacatalan.github.io/blog/2023-12-5-houston-blackouts/data/gis_osm_buildings_a_free_1.gpkg' 
+  using driver `GPKG'
+Simple feature collection with 413297 features and 5 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: -96.50055 ymin: 29.00344 xmax: -94.53285 ymax: 30.50393
+Geodetic CRS:  WGS 84</code></pre>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># when we use intersects if these geometry share any space</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>homes_b_out <span class="ot">&lt;-</span> buildings[hwy_buffer, , <span class="co"># use indexing: select the rows, all columns of buffer</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                     op <span class="ot">=</span> st_intersects, <span class="co"># choose option intersect select those that share any space</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>                     drop <span class="ot">=</span> <span class="cn">FALSE</span>] <span class="co"># don't drop geometries</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="step-3-what-was-the-median-income-where-blackouts-occured" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-what-was-the-median-income-where-blackouts-occured">Step 3: What was the median income where blackouts occured?</h3>
+<p>I also wanted to investigate socioeconomic factors that could impact the recovery of these homes that experiences blackouts. To achieve this I joined the census data to understand the median income of those that experienced blackouts. I used the U.S. Census Bureau’s American Community Survey information to find county level data about the <strong>median income</strong> of homes in Houston that experienced blackouts. This could show a potential skew as to who is experiencing these events.</p>
+<p>I want to be able to compare the incomes of census tracts that had homes that experienced a blackout, and those that did not.</p>
+<p>Reading in Houston census data:</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Join the geometry and median income layer together</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>median_inc_geom <span class="ot">&lt;-</span> <span class="fu">left_join</span>(geom, median_income, <span class="at">by =</span> <span class="st">"geoid"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_transform</span>(<span class="at">crs =</span> <span class="st">"epsg:3083"</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>h_box <span class="ot">&lt;-</span> h_box <span class="sc">%&gt;%</span> </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_transform</span>(<span class="at">crs =</span> <span class="st">"epsg:3083"</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># crop census to Houston</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>h_median <span class="ot">&lt;-</span> <span class="fu">st_crop</span>(median_inc_geom, h_box)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># find where census tracts and the buildings share any space</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>building_census <span class="ot">&lt;-</span> h_median[homes_b_out, , <span class="co"># use indexing: select the rows, all columns of homes in blackout areas</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>                     op <span class="ot">=</span> st_intersects]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="step-4-visualizations-of-median-income-and-blackouts" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-visualizations-of-median-income-and-blackouts">Step 4: Visualizations of median income and blackouts</h3>
+<p>To understand the distribution of blackout areas, I created a map of median incomes in the Houston Metropolitan Area, and overlayed points to mark the census blocks that experienced a blackout.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot it!</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>median_income_plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>This is hard to understand if there is any distribution since the data is all collected in the center of the metropolitan area. Instead, plot the income distribution of census tracts that had blackouts and those that did not.</p>
+<section id="distribution-of-median-income" class="level4">
+<h4 class="anchored" data-anchor-id="distribution-of-median-income">Distribution of Median Income</h4>
+<p>Compare areas that experienced blackouts and areas that did not to see if there is a socioeconomic difference between the two.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot it!</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>boxplot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="conclusions-and-future-analysis" class="level1">
+<h1>Conclusions and Future Analysis</h1>
 <p>From the visualizations above, there was no difference in the median income distribution of counties that experienced blackouts and those that did not experience blackouts.</p>
 <p>The map shows that census blocks affected by blackouts seem to congregate closer to the center of Houston’s metropolitan area. One issue with this analysis is that the distribution of census blocks is not uniform over the Houston area, so we can only say that it looks like more of the census tracts in the center of the metropolitan area were affected by blackouts, but the distribution of the blackouts extends outwards.</p>
 <p>The box plot above shows that there is not a big difference in the median income distribution of census tracts that were affected by blackouts and those that were not affected. This distribution represents the aggregate of median income in each census tact which means that it is at a lower resolution than the blackout data. This has a potential to erase spatial patters within the census tracts that may represent a more accurate relationship between income and blackouts.</p>
 <p>More exploration of income distribution at a finer spatial resolution would be beneficial to understand any economic disparities in the preparedness for buildings to handle winter storms in Houston, Texas.</p>
 
 
-</section>
 </section>
 
 
