@@ -12,7 +12,7 @@ format:
   html:
     code-fold: true
 draft: false
-image: 
+image: houston_b.jpeg
 toc: TRUE
 bibliography: references.bib
 ---
