@@ -196,7 +196,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#project-background" id="toc-project-background" class="nav-link active" data-scroll-target="#project-background">Project background</a></li>
   <li><a href="#highlights" id="toc-highlights" class="nav-link" data-scroll-target="#highlights">Highlights</a></li>
   <li><a href="#data-information" id="toc-data-information" class="nav-link" data-scroll-target="#data-information">Data Information</a></li>
-  <li><a href="#import-libraries" id="toc-import-libraries" class="nav-link" data-scroll-target="#import-libraries">Import Libraries</a></li>
   <li><a href="#step-1-import-data" id="toc-step-1-import-data" class="nav-link" data-scroll-target="#step-1-import-data">Step 1: Import Data</a></li>
   <li><a href="#step-2-prepare-aqi-data" id="toc-step-2-prepare-aqi-data" class="nav-link" data-scroll-target="#step-2-prepare-aqi-data">Step 2: Prepare AQI Data</a>
   <ul class="collapse">
@@ -264,8 +263,9 @@ h1{
 <p><strong>Dataset 3:</strong></p>
 <p>A shapefile of fire perimeters in California during 2017. The <a href="https://gis.data.ca.gov/datasets/CALFIRE-Forestry::california-fire-perimeters-all-1/about">complete file can be accessed in the CA state geoportal</a>.</p>
 </section>
-<section id="import-libraries" class="level1">
-<h1>Import Libraries</h1>
+<section id="step-1-import-data" class="level1">
+<h1>Step 1: Import Data</h1>
+<p>We are using the AQI, Landsat, and California fire data:</p>
 <div class="cell" data-tags="[]" data-execution_count="1">
 <details>
 <summary>Code</summary>
@@ -285,10 +285,6 @@ h1{
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.patches <span class="im">as</span> mpatches <span class="co"># to create legends</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section>
-<section id="step-1-import-data" class="level1">
-<h1>Step 1: Import Data</h1>
-<p>We are using the AQI, Landsat, and California fire data:</p>
 <div class="cell" data-tags="[]" data-execution_count="2">
 <details>
 <summary>Code</summary>
