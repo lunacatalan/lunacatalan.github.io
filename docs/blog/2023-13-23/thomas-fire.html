@@ -197,7 +197,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#highlights" id="toc-highlights" class="nav-link" data-scroll-target="#highlights">Highlights</a></li>
   <li><a href="#data-information" id="toc-data-information" class="nav-link" data-scroll-target="#data-information">Data Information</a></li>
   <li><a href="#import-libraries" id="toc-import-libraries" class="nav-link" data-scroll-target="#import-libraries">Import Libraries</a></li>
-  <li><a href="#import-data" id="toc-import-data" class="nav-link" data-scroll-target="#import-data">Import Data</a></li>
+  <li><a href="#step-1-import-data" id="toc-step-1-import-data" class="nav-link" data-scroll-target="#step-1-import-data">Step 1: Import Data</a></li>
   <li><a href="#prepare-aqi-data" id="toc-prepare-aqi-data" class="nav-link" data-scroll-target="#prepare-aqi-data">Prepare AQI Data</a>
   <ul class="collapse">
   <li><a href="#data-selection" id="toc-data-selection" class="nav-link" data-scroll-target="#data-selection">Data Selection</a></li>
@@ -267,6 +267,8 @@ h1{
 <section id="import-libraries" class="level1">
 <h1>Import Libraries</h1>
 <div class="cell" data-tags="[]" data-execution_count="1">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># import libraries</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -281,11 +283,15 @@ h1{
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> shapely.geometry <span class="im">import</span> box</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.patches <span class="im">as</span> mpatches <span class="co"># to create legends</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
-<section id="import-data" class="level1">
-<h1>Import Data</h1>
+<section id="step-1-import-data" class="level1">
+<h1>Step 1: Import Data</h1>
+<p>We are using the AQI, Landsat, and California fire data:</p>
 <div class="cell" data-tags="[]" data-execution_count="2">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># upload aqi data using url</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>aqi_17 <span class="op">=</span> pd.read_csv(<span class="st">'https://aqs.epa.gov/aqsweb/airdata/daily_aqi_by_county_2017.zip'</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>aqi_18 <span class="op">=</span> pd.read_csv(<span class="st">'https://aqs.epa.gov/aqsweb/airdata/daily_aqi_by_county_2018.zip'</span>)</span>
@@ -303,6 +309,7 @@ h1{
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">'data'</span>,</span>
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">'California_Fire_Perimeters_2017'</span>,</span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">'California_Fire_Perimeters_2017.shp'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="prepare-aqi-data" class="level1">
@@ -310,9 +317,12 @@ h1{
 <p>Since we want to investigate the data from both of these dataframes, we want to join them as a list of data frames using the <code>concat()</code> method.</p>
 <p>We can see that the dates now range from 2017 to 2018:</p>
 <div class="cell" data-tags="[]" data-execution_count="3">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># join two dataframes as a list of data frames</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>aqi <span class="op">=</span> pd.concat([aqi_17, aqi_18])</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>aqi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
@@ -486,15 +496,20 @@ h1{
 </div>
 <p>We also want to update the column names since they are annoying to work with in this format:</p>
 <div class="cell" data-tags="[]" data-execution_count="4">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># rename column names with lowercase and add _ between words</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>aqi.columns <span class="op">=</span> aqi.columns.<span class="bu">str</span>.lower().<span class="bu">str</span>.replace(<span class="st">' '</span>,<span class="st">'_'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <section id="data-selection" class="level2">
 <h2 class="anchored" data-anchor-id="data-selection">Data Selection</h2>
 <p>Now that we have a clean dataframe, we want to be able to select AQI information for Santa Barbara. We also dont want a lot of the other county information since we are only interested in SB, so we can drop those columns.</p>
 <p>Since we are interested in the AQI over time, we want to make sure that we can plot the time series correctly. To do that we want to check our data types to make sure that the date column is in the right format.</p>
 <div class="cell" data-tags="[]" data-execution_count="5">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select only SB county and drop column names</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>aqi_sb <span class="op">=</span> aqi[aqi.county_name <span class="op">==</span> <span class="st">'Santa Barbara'</span>].drop([<span class="st">'state_name'</span>, <span class="co"># drop these columns </span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                                                       <span class="st">'county_name'</span>, </span>
@@ -502,6 +517,7 @@ h1{
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                                                       <span class="st">'county_code'</span>], axis <span class="op">=</span> <span class="dv">1</span>)</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>aqi_sb.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>date                         object
 aqi                           int64
@@ -515,10 +531,13 @@ dtype: object</code></pre>
 <p>As we can see above, the date column is not in the correct format. Since we are interested in plotting this data as time series, we want to make sure that the date column is in datetime so that it can plot correctly.</p>
 <p>You can see that the date is now in datetime format!</p>
 <div class="cell" data-tags="[]" data-execution_count="6">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># update date column to datetime type</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>aqi_sb[<span class="st">'date'</span>] <span class="op">=</span> pd.to_datetime(aqi_sb[<span class="st">'date'</span>])</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>aqi_sb.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>date                         datetime64[ns]
 aqi                                   int64
@@ -535,11 +554,14 @@ dtype: object</code></pre>
 <p>In this step we are going to prepare the data for plotting by making calculating the 5 day average rolling mean to smooth the data and make it more understandable visually.</p>
 <p>To make plotting easier, we will first det the date column as the index. Then, we want to create a new column with the new 5 day average mean.</p>
 <div class="cell" data-tags="[]" data-execution_count="7">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># set date as index for easy plotting</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>aqi_sb <span class="op">=</span> aqi_sb.set_index(<span class="st">'date'</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># create new column with 5 day mean</span></span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>aqi_sb[<span class="st">'five_day_average'</span>] <span class="op">=</span> aqi_sb.aqi.rolling(<span class="st">'5D'</span>).mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 </section>
@@ -547,10 +569,13 @@ dtype: object</code></pre>
 <h1>Prepare Landstat Data</h1>
 <p>First, we are going to investigate the raster layer to gain a sense of its dimensions and resolution.</p>
 <div class="cell" data-tags="[]" data-execution_count="8">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># look at landsat data</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"bands:"</span>, landsat.band)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'spatial bounding box:'</span>)</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(landsat.rio.bounds(), <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>bands: &lt;xarray.DataArray 'band' (band: 1)&gt;
 array([1])
@@ -565,11 +590,14 @@ spatial bounding box:
 <p>We can see that there is a single band. This will prove difficult to plot so we should remove it before we continue.</p>
 <p>Once we run the code below we can check raster again to see if the band was dropped:</p>
 <div class="cell" data-tags="[]" data-execution_count="9">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remove band dimension from lulc to be able to plot</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>landsat <span class="op">=</span> landsat.squeeze().drop(<span class="st">'band'</span>)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># check to see if the band was dropped</span></span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>landsat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="9">
 
 <div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
@@ -964,25 +992,34 @@ Data variables:
 <h2 class="anchored" data-anchor-id="prepare-ca-fire-data">Prepare CA Fire Data</h2>
 <p>First, we are going to compare the <code>crs</code> of the landsat and fire data to see if we have to make any updates. Since these datasets have difference <code>crs</code>, we are are going to reproject the ca_fire data to the landsat data.</p>
 <div class="cell" data-tags="[]" data-execution_count="10">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check crs</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"ca_fire: </span><span class="sc">{</span>ca_fire<span class="sc">.</span>crs<span class="sc">}</span><span class="ch">\n</span><span class="ss">landsat: </span><span class="sc">{</span>landsat<span class="sc">.</span>rio<span class="sc">.</span>crs<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>ca_fire: EPSG:3857
 landsat: EPSG:32611</code></pre>
 </div>
 </div>
 <div class="cell" data-tags="[]" data-execution_count="11">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># update fire crs to landsat crs</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>ca_fire <span class="op">=</span> ca_fire.to_crs(<span class="st">"EPSG:32611"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>Now that that is done, we want to make sure that the ca_fire data is easy to work with.</p>
 <p>The column names are all in caps and we have decided that that’s annoying, so we want to update the column names.</p>
 <div class="cell" data-tags="[]" data-execution_count="12">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check the columns and the number of values in the ca fire data frame</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"the column names are: "</span>, ca_fire.columns)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># set all column names to lower case for easier wrangling </span></span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>ca_fire.columns <span class="op">=</span> ca_fire.columns.<span class="bu">str</span>.lower()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>the column names are:  Index(['index', 'OBJECTID', 'YEAR_', 'STATE', 'AGENCY', 'UNIT_ID', 'FIRE_NAME',
        'INC_NUM', 'ALARM_DATE', 'CONT_DATE', 'CAUSE', 'C_METHOD', 'OBJECTIVE',
@@ -996,9 +1033,12 @@ landsat: EPSG:32611</code></pre>
 <h2 class="anchored" data-anchor-id="data-selection-1">Data selection</h2>
 <p>We are only interested in mapping the Thomas fire that we have the AQI data for. In this next step, we want to only choose the Thomas fires from the california fire dataset. This will result in a single polygon:</p>
 <div class="cell" data-tags="[]" data-execution_count="13">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select only the Thomas Fires</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>thomas_fire <span class="op">=</span> ca_fire[ca_fire.fire_name <span class="op">==</span> <span class="st">'THOMAS'</span>]</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>thomas_fire</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <div>
 
@@ -1069,10 +1109,13 @@ landsat: EPSG:32611</code></pre>
 <p>We want to make it easy for viewers to understand what we are plotting. Selecting the bands below to create a flase color image of the landsat data will give us more information than a true color image.</p>
 <p>Plot the true color image and see what comes out:</p>
 <div class="cell" data-tags="[]" data-execution_count="14">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select bands from landsat</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>landsat[[<span class="st">"red"</span>, </span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>         <span class="st">"green"</span>, </span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>         <span class="st">"blue"</span>]].to_array().plot.imshow(robust <span class="op">=</span> <span class="va">True</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>&lt;matplotlib.image.AxesImage at 0x7c7427afcfd0&gt;</code></pre>
 </div>
@@ -1083,16 +1126,21 @@ landsat: EPSG:32611</code></pre>
 <p>This shows us the ground, but it is not clear what we are looking at. Is it trees? Grass?</p>
 <p>Now, try mapping the false color image by plotting the short-wave infrared (swir22), near-infrared, and red variables (in that order):</p>
 <div class="cell" data-tags="[]" data-execution_count="15">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># save false color image as an array</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>landsat_false <span class="op">=</span> landsat[[<span class="st">"swir22"</span>,</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"nir08"</span>, <span class="co"># plot nir layer</span></span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"red"</span>]].to_array()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="map" class="level1">
 <h1>Map</h1>
 <p>Create a map that shows a geographic context for the spike in the AQI data plot during the Thomas Fire.</p>
 <div class="cell" data-tags="[]" data-execution_count="16">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">#---- Prepare Figure ----#</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the images in the same figure</span></span>
@@ -1149,6 +1197,7 @@ landsat: EPSG:32611</code></pre>
 <span id="cb22-54"><a href="#cb22-54" aria-hidden="true" tabindex="-1"></a><span class="co"># space well</span></span>
 <span id="cb22-55"><a href="#cb22-55" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
 <span id="cb22-56"><a href="#cb22-56" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display">
 <p><img src="thomas-fire_files/figure-html/cell-17-output-1.png" class="img-fluid"></p>
 </div>
