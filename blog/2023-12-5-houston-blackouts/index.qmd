@@ -7,14 +7,12 @@ date: 12-05-2023
 categories: [Geospatial, Quarto, R, MEDS] # self-defined categories
 citation: 
   url: https://lunacatalan.github.io/blog/2023-12-5-houston-blackouts/index.html 
-#image: preview-image.png
 format:
   html:
     code-fold: true
 draft: false
 image: houston_b.jpeg
 toc: TRUE
-bibliography: references.bib
 ---
 
 ## Research Question

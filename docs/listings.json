@@ -2,7 +2,9 @@
   {
     "listing": "/blog.html",
     "items": [
-      "/blog/2023-13-23/thomas-fire.html"
+      "/blog/index.html",
+      "/blog/2023-13-23/thomas-fire.html",
+      "/blog/2023-12-5-houston-blackouts/index.html"
     ]
   }
 ]
