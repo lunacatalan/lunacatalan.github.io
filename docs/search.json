@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Analysis of Air Quality from Thomas Fire in Santa Barbara\n\n\n\n\n\n\n\nGeospatial\n\n\nQuarto\n\n\nPython\n\n\nMEDS\n\n\n\n\nExploring the effect of the Thomas Fire on Air Quality in Santa Barbara in 2017.\n\n\n\n\n\n\nDec 13, 2023\n\n\nLuna Herschenfeld-Catalán\n\n\n\n\n\n\n  \n\n\n\n\nCauses of Groundwater Level Decline in the Qazvin Aquifer, Iran\n\n\n\n\n\n\n\nGeospatial\n\n\nQuarto\n\n\nR\n\n\nMEDS\n\n\n\n\nTime Series Analysis on Effect of Precipitation Changes and Agricultural Production on Groundwater level changes in the Qazvin Plain, Iran from 1984-2019.\n\n\n\n\n\n\nDec 12, 2023\n\n\nLuna Herschenfeld-Catalán\n\n\n\n\n\n\n  \n\n\n\n\nAnalysis of Houston Blackouts\n\n\n\n\n\n\n\nGeospatial\n\n\nQuarto\n\n\nR\n\n\nMEDS\n\n\n\n\nInvestigating socioeconomic factors in the Houston metropolitan area in the aftermath of two winter storms in February, 2021.\n\n\n\n\n\n\nDec 5, 2023\n\n\nLuna Herschenfeld-Catalán\n\n\n\n\n\n\n  \n\n\n\n\nFirst Blog Post!\n\n\n\n\n\n\n\nQuarto\n\n\nMEDS\n\n\nWorkshop\n\n\n\n\nSome thoughts about what I want to do\n\n\n\n\n\n\nOct 23, 2023\n\n\nLuna Catalan\n\n\n\n\n\n\nNo matching items"
+    "text": "Analysis of Air Quality from Thomas Fire in Santa Barbara\n\n\n\n\n\n\n\nGeospatial\n\n\nQuarto\n\n\nPython\n\n\nMEDS\n\n\n\n\nExploring the effect of the Thomas Fire on Air Quality in Santa Barbara in 2017.\n\n\n\n\n\n\nDec 13, 2023\n\n\nLuna Herschenfeld-Catalán\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -133,52 +133,17 @@
     "text": "Footnotes\n\n\nI did a research proposal about the effect of message framing on agreement to climate change policy↩︎"
   },
   {
-    "objectID": "blog/2023-12-5-houston-blackouts/index.html",
-    "href": "blog/2023-12-5-houston-blackouts/index.html",
-    "title": "Analysis of Houston Blackouts",
+    "objectID": "blog/2023-12-14-groundwater-aquifer/index.html",
+    "href": "blog/2023-12-14-groundwater-aquifer/index.html",
+    "title": "Causes of Groundwater Level Decline in the Qazvin Aquifer, Iran",
     "section": "",
-    "text": "What socioeconomic factors are correlated with the occurrence of blackouts in Houston, Texas?"
+    "text": "Groundwater supplies water resources for drinking water and irrigated agriculture for millions of people around the world[CITE]. Groundwater levels are declining around the world. This is partly do to changing climatic trends[CITE], where declines in precipitation is leading to declines in recharge of groundwater storage in aquifers. Over the last couple of decades, agriculture production in many areas has also increased[CITE]. In arid regions, agriculture is mainly fed by groundwater since there is not enough surface water available, or it does not rain enough.\nIn the last 40 years, groundwater level declines in the Qazvin Plain, in Iran have accelerated. Past research has indicataed that agricultural production has also increased as… (Why agriculture is what I am looking at: https://www.researchgate.net/profile/Zahra-Mousavi-16/publication/339627057_Land_subsidence_from_interferometric_SAR_andgroundwater_patterns_in_the_Qazvin_plain_Iran/links/5f604a6a299bf1d43c04ed23/Land-subsidence-from-interferometric-SAR-andgroundwater-patterns-in-the-Qazvin-plain-Iran.pdf)\nThis analysis can help guide groundwater management strategy by shedding light on how different factors are contributing to the rapid decline, with the hope of developing effective management strategies to protect groundwater resources."
   },
   {
-    "objectID": "blog/2023-12-5-houston-blackouts/index.html#research-question",
-    "href": "blog/2023-12-5-houston-blackouts/index.html#research-question",
-    "title": "Analysis of Houston Blackouts",
-    "section": "",
-    "text": "What socioeconomic factors are correlated with the occurrence of blackouts in Houston, Texas?"
-  },
-  {
-    "objectID": "blog/2023-12-5-houston-blackouts/index.html#project-background",
-    "href": "blog/2023-12-5-houston-blackouts/index.html#project-background",
-    "title": "Analysis of Houston Blackouts",
-    "section": "Project Background",
-    "text": "Project Background\nIn February 2021, Texas experienced multiple winter storms that led to power outages across the state and left over 4.5 million homes and businesses without power1. In light of this disaster, understanding the different factors that influence recovery is important to implement management strategies if this happens again. Exploring the socioeconomic factors of those that experienced blackouts is the first step to understanding paths to recovery."
-  },
-  {
-    "objectID": "blog/2023-12-5-houston-blackouts/index.html#goals",
-    "href": "blog/2023-12-5-houston-blackouts/index.html#goals",
-    "title": "Analysis of Houston Blackouts",
-    "section": "Goals",
-    "text": "Goals\n\nInvestigate socioeconomic factors associated with occurrence of blackouts in Houston, Texas metropolitan area.\nExplore the socioeconomic factors that influenced recovery post blackouts in the Houston"
-  },
-  {
-    "objectID": "blog/2023-12-5-houston-blackouts/index.html#takeaways",
-    "href": "blog/2023-12-5-houston-blackouts/index.html#takeaways",
-    "title": "Analysis of Houston Blackouts",
-    "section": "Takeaways",
-    "text": "Takeaways\n\nThere was no difference in the median income distribution of counties that experienced blackouts and those that did not experience blackouts.\nMore exploration of income distribution at a finer spatial resolution would be beneficial to understand any economic disparities in the preparedness for buildings to handle winter storms in Houston, Texas."
-  },
-  {
-    "objectID": "blog/2023-12-5-houston-blackouts/index.html#sources",
-    "href": "blog/2023-12-5-houston-blackouts/index.html#sources",
-    "title": "Analysis of Houston Blackouts",
-    "section": "Sources",
-    "text": "Sources\nLIGHT DATA\nThe VIIRS data is distributed in 10x10 degree tiles in sinusoidal equal-area projection. They are identified by horizontal (h) and vertical (v) position in the grid. Houston is included in two tiles: h08v05 and h08v06. We can access tiles through NASA’s Level-1 and Atmospheric Archive & Distribution System Distributed Active Archive Center (LAADS DAAC). Since we have two dates, we need to access these tiles on each day.\n\n\nROAD AND BUILDING DATA\nSince highways account for a large amount of night lights, we want to exclude areas near highways to prevent falsely identifying areas with reduced traffic as areas without power. A shapefile with all of the highways in Texas was prepared by Geofabrik’s download sites, and we compiled a subset of roads that intersect the Houston metropolitan area in a Geopackage (.gpkg file). We prepared a GeoPackage with only houses in the Houston Metropolitan Area using building data from OpenStreetMap which was also provided by Geofabrik.\n\n\nSOCIOECONOMIC DATA\nWe used the U.S. Census Bureau’s American Community Survey for census tracts in 2019 as a proxy for socioeconomic information at the county level. This data is stored in a folder: ACS_2019_5YR_TRACT_48.gdb which has layers that can be accessed using st_layers(). Each layer is a subset of the fields contained in ACS metadata.\nSince the layers are separate, to access the ACS attributes associated with the geemetries you have to combine them into a single feature layer."
-  },
-  {
-    "objectID": "blog/2023-12-5-houston-blackouts/index.html#footnotes",
-    "href": "blog/2023-12-5-houston-blackouts/index.html#footnotes",
-    "title": "Analysis of Houston Blackouts",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nWikipedia. 2021. “2021 Texas power crisis.” Last modified October 2, 2021. https://en.wikipedia.org/wiki/2021_Texas_power_crisis.↩︎"
+    "objectID": "blog/2023-12-14-groundwater-aquifer/index.html#multiple-linear-regression-with-aei-mean",
+    "href": "blog/2023-12-14-groundwater-aquifer/index.html#multiple-linear-regression-with-aei-mean",
+    "title": "Causes of Groundwater Level Decline in the Qazvin Aquifer, Iran",
+    "section": "Multiple Linear Regression with AEI mean",
+    "text": "Multiple Linear Regression with AEI mean\nI conducted an OLS multiple linear regression to look at how AEI and precipitation impacted the change in groundwater level. The results of the OLS regression are shown in Figure XYZ. I used ggplot() to create a scatter plot of the mean AEI and groundwater level change over time. Then I used geom_smooth() to plot a linear regression to see how these variables changed over time. The groundwater change slope is negative, and the AEI slope is positive.\n\nir_gw_plot\n\n\n\n\nThe result of the multiple linear regression model are in Table 1, and they indicate that for every 1 ha increase in AEI, there is a 0.01 m decrease in groundwater level. The effect of AEI has a p-value of 0.032, which is small enough that there is statistical significance of this analysis. However, the p-value for annual precipitation is 0.591, meaning that there can be no statistical significance taken from the role of precipitation on grondwater level change. This model had an R^2 value of 0.50 which means it explained 50% of the variation in groundwater level change.\n\n\n\nTable 1: Results of Multiple Linear Regression of Area Equipped for Irrigation and Precipitation on Groundwater Level Change\n\n\n\n\n\nTable 2: Results of Simple Linear Regression of Area Equipped on Irrigation on Groundwater Level Change\n\n\nThen I ran a simple linear regression model to see the effect of just AEI mean. The results in Table 2 show that the p-value is 0.02, which increases our confidence level that AEI mean is statistically significant. Here, the R^2 value has increased to 0.56, which means this model explains 56% of the variation in groundwater level change. Given the higher R^2 value, this model is more useful than the one that includes precipitation.\n{width = 50px}\nI was unhappy with the temporal resolution of the irrigation data, since it was an aggregate in 5-year chunks that was already accessing data samples. To have more confidence in my results, I calculated the SAVI from the area of a buffer around the well being used to to collect the groundwater level data, and across the aquifer in Python. Then I extracted summary statistics from each raster.\n\nsavi_plot\n\n\n\n\nI fit a linear regression model to the data as seen in Fig XYZ. This graph indicates that over time the median index value around the groundwater well was decreasing. Since the scale is from 0-1, the table results make more snese when you divide by 10. Reading it that way, for every 0.1 incrase in the SAVI index, groundwater levelsThe results of the quadratic regression are shown in Table 3, and show a statistically significant effect (p-value of 0.001) of the median SAVI in the buffer on the groundwater levels. Furthermore, the R^2 value is 0.30, which means this model accounts for 30% of the variation in groundwater level change.\n\n\n\nTable 3: Results of Simple Linear Regression of median Soil Adjusted Vegetation Index (SAVI) on Irrigation on Groundwater Level Change\n\n\nHYPOTHESIS TESTING\nDue to the statistical significance of the median soil adjusted vegetation index and the non-statistical significance of the annual precipitation, we fail to accept the null hypothesis.\nNull Hypothesis: In the Qazvin Plain, there is no difference of the impact of annual precipitaion and agricultural production changes on groundwater level changes from 1984-2019.\nAlternative Hypothesis: In the Qazvin Plain, there is a difference of the impact of annual precipitation and agricultural production on groundwater level changes from 1984-2019.\nCONFIDENCE INTERVAL\nI calculated a confidence interval and am 95% confident that the true change in groundwater level for every 0.1 increase in the median SAVI, is within the range of 1.6 and 5.5m."
   }
 ]
