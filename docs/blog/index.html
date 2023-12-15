@@ -214,6 +214,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="problem" class="level1">
 <h1>Problem</h1>
 <p>Groundwater supplies water resources for drinking water and irrigated agriculture for millions of people around the world. Groundwater levels are declining around the world. This is partly do to changing climatic trends, where declines in precipitation is leading to declines in recharge of groundwater storage in aquifers. Over the last couple of decades, agriculture production in many areas has also increased (James &amp; Elfers, 2015). In arid regions, agriculture is mainly fed by groundwater since there is not enough surface water available, or it does not rain enough.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../blog/2023-12-decline-groundwater/qazvin_tehran.jpeg" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption class="figure-caption">Farmers in Qazvin Irrigation Network, Source: IRNA</figcaption>
+</figure>
+</div>
 <p>In the last 40 years, groundwater level declines in the Qazvin Plain of Iran have accelerated. Past research has indicated that agricultural production and population growth have contributed to over abstraction (Babaee et al., 2020)</p>
 <p>This analysis can help guide groundwater management strategy by shedding light on how different factors are contributing to the rapid decline, with the hope of developing effective management strategies to protect groundwater resources.</p>
 </section>
@@ -224,13 +230,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>ANNUAL PRECIPITATION</strong></p>
 <p>I focused on annual precipitation as a proxy for climatic trends in this analysis. This data was provided by CHELSA-EarthEnv (Karger, 2021).</p>
 <p><strong>AGRICULTURE PRODUCTION</strong></p>
-<p>The biggest hurtle was identifying an effective proxy for agricultural production. My first attempt was using <strong>Area Equipped for Irrigation</strong> (AEI) as a measure of groundwater level decline. This data was produced by Piyush Mehta et al.&nbsp;(2023) using sub-national irrigation statistics that were aggregated to 5-year periods to develop a gridded map at 5 arc-min resolution of area equipped for irrigation. I used data from 1985-2015, and accessed them here: <a href="https://zenodo.org/records/7809342">Zenodo</a>.</p>
+<p>The biggest hurdle was identifying an effective proxy for agricultural production. My first attempt was using <strong>Area Equipped for Irrigation</strong> (AEI) as a measure of groundwater level decline. This data was produced by Piyush Mehta et al.&nbsp;(2023) using sub-national irrigation statistics that were aggregated to 5-year periods to develop a gridded map at 5 arc-min resolution of area equipped for irrigation. I used data from 1985-2015, and accessed them here: <a href="https://zenodo.org/records/7809342">Zenodo</a>.</p>
 <p>However, I was unhappy with the coarseness of this dataset so I turned to Soil Adjusted Vegetation Index (SAVI)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> measurements over time to calculate a change in agricultural area from 1984-2019. I accessed this data in Python from the Microsoft Planetary Computer. My Python workbook is stored as <code>agriculture_landsat.ipynb</code> in the <a href="https://github.com/lunacatalan/groundwater-decline">repository</a> for this post, where you can access the code I used to calculate the SAVI statistics using Landsat images.</p>
 <p>I clipped both data sets with a shapefile of the Qazvin Aquifer that I created in ArcGIS using a map from Mirhashemi &amp; Mirzaei (2021) The image and the shapefile can be accessed in this project repository saved as <code>qazvin</code>.</p>
 </section>
 <section id="basic-analysis-approach" class="level1">
 <h1>Basic Analysis Approach</h1>
-<p>I wanted to compare the yearly change in groundwater level, precipitation, and agricultural production in the Qazvin plain. To to this I first had to clean the depth to groundwater data so that I could work with the yearly mean measurement. I accessed the year with <code>separate_wider_delim()</code> and then used the <code>group_by()</code> and <code>summarize()</code> functions to generate a yearly mean depth to groundwater. However, I was interested in the change, so I used a first difference estimator to calculate the change in groundwater depth each year.</p>
+<p>I wanted to compare the yearly change in groundwater level, precipitation, and agricultural production in the Qazvin plain. To do this I first had to clean the depth to groundwater data so that I could work with the yearly mean measurement. I accessed the year with <code>separate_wider_delim()</code> and then used the <code>group_by()</code> and <code>summarize()</code> functions to generate a yearly mean depth to groundwater. However, I was interested in the change, so I used a first difference estimator to calculate the change in groundwater depth each year.</p>
 <p>I also only wanted to use the AEI over the Qazvin Plain, so I used <code>crop()</code> to clip the AEI raster stack with the Qazvin aquifer shapefile I created. Then I calculated summary statistics across each raster in the stack. I was then able to join the change in groundwater level data with the precipitation and irrigation data.</p>
 <section id="multiple-linear-regression-with-aei-mean" class="level2">
 <h2 class="anchored" data-anchor-id="multiple-linear-regression-with-aei-mean">Multiple Linear Regression with AEI mean</h2>
@@ -308,11 +314,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="references" class="level1">
 <h1>References</h1>
-<p>Babaee, S., Mousavi, Z., Masoumi, Z., Malekshah, A. H., Roostaei, M., &amp; Aflaki, M. (2020). Land subsidence from interferometric SAR and groundwater patterns in the Qazvin plain, Iran. International Journal of Remote Sensing, 41(12), 4780-4798.</p>
-<p>James, I., &amp; Elfers, S. (2015). <em>Pumped Dry: The global crisis of vanishing groundwater</em>. Pulitzer Center. https://pulitzercenter.org/projects/pumped-dry-global-crisis-vanishing-groundwater.</p>
-<p>Karger, D.N., Wilson, A.M., Mahony, C. <em>et al.</em> (2021). Global daily 1 km land surface precipitation based on cloud cover-informed downscaling. <em>Sci Data</em> <strong>8</strong>, 307. https://doi.org/10.1038/s41597-021-01084-6</p>
-<p>Mehta, P., Siebert, S., Kummu, M., Deng, Q., Ali, T., Marston, L., Xie, W., &amp; Davis, K. (2023). Global Area Equipped for Irrigation Dataset 1900-2015 (Version 3) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.7809342</p>
-<p>Mirhashemi, S. H., &amp; Mirzaei, F. (2021). Extracting association rules from changes in aquifer drawdown in irrigation areas of Qazvin plain, Iran. Groundwater for Sustainable Development, 12, 100495.</p>
+<ol type="1">
+<li>Babaee, S., Mousavi, Z., Masoumi, Z., Malekshah, A. H., Roostaei, M., &amp; Aflaki, M. (2020). Land subsidence from interferometric SAR and groundwater patterns in the Qazvin plain, Iran. International Journal of Remote Sensing, 41(12), 4780-4798.</li>
+<li><em>FAO empowers farmers to improve agriculture water productivity in Iran</em>. En.irna.ir. (n.d.). https://en.irna.ir/news/84184519/FAO-empowers-farmers-to-improve-agriculture-water-productivity</li>
+<li>James, I., &amp; Elfers, S. (2015). <em>Pumped Dry: The global crisis of vanishing groundwater</em>. Pulitzer Center. https://pulitzercenter.org/projects/pumped-dry-global-crisis-vanishing-groundwater.</li>
+<li>Karger, D.N., Wilson, A.M., Mahony, C. <em>et al.</em> (2021). Global daily 1 km land surface precipitation based on cloud cover-informed downscaling. <em>Sci Data</em> <strong>8</strong>, 307. https://doi.org/10.1038/s41597-021-01084-6</li>
+<li>Mehta, P., Siebert, S., Kummu, M., Deng, Q., Ali, T., Marston, L., Xie, W., &amp; Davis, K. (2023). Global Area Equipped for Irrigation Dataset 1900-2015 (Version 3) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.7809342</li>
+<li>Mirhashemi, S. H., &amp; Mirzaei, F. (2021). Extracting association rules from changes in aquifer drawdown in irrigation areas of Qazvin plain, Iran. Groundwater for Sustainable Development, 12, 100495.</li>
+</ol>
 
 
 </section>
