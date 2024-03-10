@@ -612,7 +612,7 @@ To approach the element of *who* I used census tract information to identify the
 ## Accessing the demographics
 
 ```{r}
-# | code-fold: true
+#| code-fold: true
 
 # load list of variables that I could access
 variables <- load_variables(2022, "acs1", cache = TRUE)
@@ -911,7 +911,7 @@ ah_clean_plot %>%
 
 ```
 
-# Infographic 
+# Infographic
 
 Putting it all together, we get a picture of affordable housing in LA.
 
