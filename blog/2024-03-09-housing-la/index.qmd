@@ -512,7 +512,7 @@ lowburden_ah_plot <- lowburden_ah %>%
 
 # ow percentage of households that qualify for affordable housing
 lowburden_non_plot <- lowburden_non %>% 
-  st_union() %>% 
+  st_union() %>%
   ggplot() +
   geom_sf() +
   labs(title = "Neighborhoods with Low Rent Burden, \nNo Affordale Housing",
