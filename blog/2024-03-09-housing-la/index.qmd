@@ -261,6 +261,9 @@ for (person in 1:nrow(puma_22)) {
                                             ifelse(puma_22[["HINCP"]][person] > low_threshold, "not eligible", "non"))))
 }
 
+# uncount to get the total number of households in each census tract with each status
+puma_wgt <- puma_22 %>% 
+  uncount(WGTP)
 ```
 
 ## Creating Map Plots
@@ -274,7 +277,7 @@ puma_geo <- puma_la %>%
   select(PUMA, geometry)
 
 
-puma_plot <- puma_22 %>% 
+puma_plot <- puma_wgt %>% 
   group_by(PUMA) %>% 
   count(status) %>% 
   pivot_wider(names_from = "status", values_from = "n") %>% 
