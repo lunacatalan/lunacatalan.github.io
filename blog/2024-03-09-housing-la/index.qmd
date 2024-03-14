@@ -770,35 +770,34 @@ ggplot(compare) +
                    labels = rev(custom_labels)) +
   xlim(0,100) +
   scale_fill_manual(values = c("skyblue", "#DDB472")) +
-  geom_text(data = c_means, aes(x = means, y = groups, label = round(means, 0), 
-                                color = status),
+  geom_text(data = c_means, aes(x = means, y = groups, label = paste(round(means, 0)), color = status),
             family = "alice",
-            vjust = 1.5, 
+            vjust = 1, 
+            hjust = 0,
+            #nudge_x = -7
             size = 6) +
   scale_color_manual(values = c("skyblue", "#DDB472")) +
   labs(y = "Percent of Census Tract", 
-       x = "",
-      caption = subtitle,
+       x = "Percent of Census Tract",
        fill = ""
        ) +
   guides(fill = "none", linetype = "none", color = "none") +
-  theme(plot.subtitle = element_markdown(ggtext::element_textbox_simple(family = "alice", size = 10, color = "white"))) +
-  theme(plot.title = element_text(size = 20, face = "bold", family = "playfairDisplay", hjust = 0.5), # Font size set to 16 and bold.
+  theme(plot.title = element_text(size = 20, family = "playfairDisplay", hjust = 0.5), # Font size set to 16 and bold.
         plot.caption.position = "plot",
+        plot.title.position = "plot",
         plot.caption =  ggtext::element_textbox_simple(size = 15, hjust = 0, family = "alice", color = "white"),
         axis.title = element_text(size = 14), # Font size set to 12.
         axis.text.y = element_text(size = 16, color = "white", family = "alice"),
         axis.text.x = element_blank(),
-        #axis.ticks.x = element_line(size = 10, color = "white"),
+        axis.title.x = element_text(size = 16, color = "white", family = "alice"),
         legend.title = element_text(size = 15, face = "bold", family = "alice", color = "white"), # Font size of the title of the legend set to 12 and bold.
         legend.text = element_text(size = 10, color = "white"), # font size of the text in the legend
         plot.background = element_rect(fill = "black"),
         panel.background = element_rect(fill = "black"),
         legend.background = element_rect(fill = "black"),
         plot.margin = margin(12, 6, 12, 18),
-        #axis.line.x = element_line(color = "white"),
         panel.grid = element_blank(), # invisible auxiliary grids
-        #panel.grid.minor.x = element_line(color = "white"),
+        panel.grid.minor.x = element_line(color = "white", size = 0.1, linetype = "dashed"),
         strip.background = element_rect(fill = "black", color = "#ff975d"), # strip background
         strip.text = element_text(size = 12, face = "bold", family = "alice", color = "white"), # strip texts
         legend.position = "top", # position of the legend
@@ -918,7 +917,7 @@ ah_clean_plot %>%
 
 Putting it all together, we get a picture of affordable housing in LA.
 
-![](images/infographic.png){fig-alt="An infographic describing the where, who, and what of the affordable housing crisis in LA. A chloropleth map that shows the distribution of rent burden in Los Angeles County, California. Points are used to show affordable housing projects that have been built between 2003 and 2014. The neighborhoods of Maywood, Commerce, Bell Gardens, and Cudahy have high rent burden, high eligibility for affordable housing, and have not had any projects built there. A density ridge plot shows the demographic distribution of the census tracts in LA compared to the tracts with affordable housing built in them. There is a greater proportion of Black and Hispanic people in tracts with affordable housing built in them compared to the average across LA. A bar plot showing the amount of funding from the LAHD that has gone into building affordable housing. Order in 2015 led to an exponential increase in funding for projects, and the order in 2022 helped expedite permits." fig-align="center"}
+![](images/infographic){fig-alt="An infographic describing the where, who, and what of the affordable housing crisis in LA. A chloropleth map that shows the distribution of rent burden in Los Angeles County, California. Points are used to show affordable housing projects that have been built between 2003 and 2014. The neighborhoods of Maywood, Commerce, Bell Gardens, and Cudahy have high rent burden, high eligibility for affordable housing, and have not had any projects built there. A density ridge plot shows the demographic distribution of the census tracts in LA compared to the tracts with affordable housing built in them. There is a greater proportion of Black and Hispanic people in tracts with affordable housing built in them compared to the average across LA. A bar plot showing the amount of funding from the LAHD that has gone into building affordable housing. Order in 2015 led to an exponential increase in funding for projects, and the order in 2022 helped expedite permits." fig-align="center"}
 
 # The Approach
 
