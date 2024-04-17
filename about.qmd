@@ -8,11 +8,40 @@ about:
   image-width: 15em
 ---
 
-## Education 
+# EDUCATION
 
-Master of Environmental Data Science, Bren (2024)
+## Master of Environmental Data Science
 
-Environmental Science and Psychological Brain Sciences, UCSB (2019)
+#### June 2024
 
-## Experience
-This page is under construction, check back in soon :)
+#### Bren School of Environmental Science & Management -- UC, Santa Barbara (UCSB).
+\
+*Highlighted Coursework:* Machine Learning in Environmental Science; Environmental Policy Evaluation; Data Visualization and Communication; Python for Environmental Data Science (EDS); Modeling Environmental Systems; Analytical Workflows and Scientific Reproducibility
+
+## Environmental Science (B.S.) & Psychological Brain Sciences (B.S.)
+
+#### June 2019
+
+#### University of California, Santa Barbara
+
+\
+*Highlighted Coursework:* GIS for Environmental Application; Exploring Water Data Honors: Outstanding Senior Award, Environmental Studies
+
+# SKILLS
+
+### Programming, Coding, & Data Analysis:
+
+R, Python, GIS, SQL, Git (+ GitHub); Familiar with HTML.
+
+### Programming Environments:
+
+RStudio, Google Earth Engine, ArcGIS, QGIS, Visual Studio Code, Jupyter Notebooks.
+
+### Technical Coding Skills:
+
+Geospatial Analysis, Data Visualization, Machine Learning, and Database Management.
+
+
+# EXPERIENCE
+
+Page is still under construction, come back soon :)
