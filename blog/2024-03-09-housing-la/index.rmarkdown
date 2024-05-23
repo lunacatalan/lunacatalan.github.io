@@ -1,6 +1,6 @@
 ---
 title: "Who, What, Where: Exploring Affordable Housing in Los Angeles, CA"
-description: "Investigating the access to and need for affordable housing in the Los Angeles County area to guide equitable approaches to the housing crisis."
+description: "Investigating the access to and need for affordable housing in the Los Angeles County area to guide equitable approaches to "
 author: "Luna Herschenfeld-Catalán she/her"
 date:  2024-03-09
 title-block-banner: true
@@ -14,6 +14,7 @@ draft: false
 image: images/infographic.png
 toc: TRUE
 ---
+
 
 ## Research Question
 
@@ -53,6 +54,7 @@ AFFORDABLE HOUSING DATA
 
 -   Affordable housing project data was accessed from [data.lacity.org](https://data.lacity.org/Housing-and-Real-Estate/LAHD-Affordable-Housing-Projects-List-2003-to-Pres/mymu-zi3s/about_data) and saved as `LAHD_Affordable_Housing_Projects_List__2003_to_Present__20240119.csv`. This data set was last updated February 6, 2024, and is owned by the Department of Los Angeles housing. Each entry is a single project that has been started since 2003 to present.
 
+
 ```{r include = FALSE}
 
 # Read in libraries
@@ -77,11 +79,13 @@ library(colorspace)
 knitr::opts_chunk$set(message = FALSE, warning = FALSE)
 ```
 
+
 # Where?
 
 To approach the element of *where* affordable housing would be most useful, and the elements that would go into that, a chloropleth map is very effective. This allows us to compare across geographic regions, such as census tracts, and then elaborate in greater detail on any interesting patterns that appeared. I
 
 ## Wrangle and Clean Data
+
 
 ```{r eval = FALSE}
 #| code-fold: true
@@ -178,9 +182,11 @@ ah_clean <- ah_raw %>%
 
 ```
 
+
 ## Assigning income categories to households
 
 ### Create income breaks for households above 8 (from 9-20)
+
 
 ```{r message = FALSE}
 # creating dataframe with income brackets and eligibility
@@ -231,11 +237,13 @@ cols_9_20 <- cbind(extreme, very_low) %>%
 income_breaks <- rbind(income_breaks, cols_9_20)
 ```
 
+
 ### Creating For Loop
 
 I wanted to iterate over the entire data frame, and based on the household size, assign a threshold value to that row. Then, based on the income, the household would be categorized as either extreme, very low, low, or not eligible.
 
 #### Applying for loop to the whole data set
+
 
 ```{r message = FALSE}
 puma_22$status <- rep(NA, nrow(puma_22))
@@ -267,9 +275,11 @@ puma_wgt <- puma_22 %>%
   uncount(WGTP)
 ```
 
+
 ## Creating Map Plots
 
 The PUMS data is aggregated to locations of at least 100,000 people, but the geographies aren't at a very useful spatial resolution. To address this problem, I wanted to combine the information for PUMS and neighborhoods, which are more relevant to the average person. To achieve this, I used the data set that included census tracts and neighborhoods, and joined them. This allowed me to make a map of the census tracts with the PUMS household data.
+
 
 ```{r}
 #| code-fold: true
@@ -336,9 +346,11 @@ tract_eligibility <- puma_tract %>%
   st_as_sf()
 ```
 
+
 ### Set up: Rent Burden Plot
 
 This plot looked at the `GRPIP` column, which is the gross rent percentage spent on rent. To qualify as rent burdened, households must spend \>30% of their household income on rent. I classified the households as either burdened or not burdened, and then found the percentage of each tract that was rent burdened. I made sure to `uncount()` the wgt column which is the number of households that each row represents. This allowed me to gain a better estimate of the households that were rent burdened.
+
 
 ```{r}
 
@@ -362,9 +374,11 @@ rent_burdened <- puma_tract %>%
 
 ```
 
+
 ### Creating a custom theme
 
 I created my own theme for my plots I decided that I would have a dark background because it made the brown/yellow colors that reminded me of buildings pop. I chose the font families based on suggested font pairings that were aesthetically pleasing.
+
 
 ```{r}
 
@@ -417,9 +431,11 @@ my_brew_palette1 <- RColorBrewer::brewer.pal(n = 9, name = 'YlOrBr')
 colors <- sequential_hcl(9, palette = "Red-Yellow")
 ```
 
+
 ### Plotting: Eligibility for Affordable Housing and Rent Burden in Census Tracts
 
 I used this plot to explore the distribution of eligibility across Los Angeles to see if there were any interesting patterns. I then realized that in terms of importance, looking at rent burden is more important since that reflects more about an area and the way people interact with it.
+
 
 ```{r}
 # eligibility of housing in LA
@@ -441,9 +457,11 @@ tract_eligibility_percent <- ggplot(tract_eligibility) +
   my_theme_dark
 ```
 
+
 ### Comparing Neighborhoods and Census Tracts of Interest
 
 I was interested in looking at census tracts that had different factors, including high vs low rent burden, high vs low eligibility, and presence or absence of affordable housing. These dynamics often interact, and understanding the people that are affected in these different situations could be important for understanding ways to approach different issues.
+
 
 ```{r fig.width = 11, fig.height = 11}
 #| code-fold: true
@@ -533,7 +551,9 @@ interest_plot <- interest %>%
 
 ```
 
+
 I ended up looking at a cluster of census tracts that had high rent burden, high eligibility, and no affordable housing projects in it. This seemed like a location in which it would be really beneficial to build affordable housing. I wanted to highlight these neighborhoods, and present them as a possible location of interest.
+
 
 ```{r fig.width = 6, fig.height = 6}
 
@@ -560,11 +580,13 @@ neighborhood_plot <- ggplot(data = burden_non %>% st_union()) +
 neighborhood_plot
 ```
 
+
 ### Plotting: Rent burden with affordable housing projects
 
 This plot shows the distribution of rent burden across Los Angeles, and the location of affordable housing projects since 2003. The color of the filling reminds me of brick, and brought to mind a theme of buildings. I wanted to be color blind friendly so I chose blue dots for the affordable housing so that they could be clearly seen. The selection of these colors ended up being the entire theme for my infographic, and made the color selection in words and graphs all act as a very intentional legend throughout the entire plot.
 
 I also added an arrow to the plot that indicated the census tract of interest I highlighted above. I decided to do that because I want all my work to be an opportunity to find solutions and highlighting a place that is potentially being undeserved or ignored by the city of LA can provide the opportunity for intentional project development in the future.
+
 
 ```{r fig.width = 11, fig.height = 11}
 
@@ -609,11 +631,13 @@ burden_plot <- base_map +
 burden_plot
 ```
 
+
 # Who?
 
 To approach the element of *who* I used census tract information to identify the ethnicity of people in these census tracts. It's important to understand the people in these areas because we aren't just mapping code we are talking about real lives.
 
 ## Accessing the demographics
+
 
 ```{r}
 #| code-fold: true
@@ -745,9 +769,11 @@ compare <- all_eth %>%
 
 ```
 
+
 ## Creating Ridge Plots
 
 Comparing the demographics of all of LA vs the census tracts with affordable housing in them.
+
 
 ```{r fig.width = 10, fig.height = 9}
 showtext_auto()
@@ -807,6 +833,7 @@ ggplot(compare) +
   )
 ```
 
+
 # What?
 
 A key element for understanding *what* is how the city of LA is addressing this housing issue and the impact. I chose to focus on two executive orders in 2015 and 2022 that attempted to make building affordable housing easier. Its often useful to examine the amount of funding that the government is giving to a project to understand how much they care. That's why I chose to look at the total amount of money that LAHD used on affordable housing projects from 2003 to present.
@@ -816,6 +843,7 @@ A key element for understanding *what* is how the city of LA is addressing this 
 ### Set up
 
 I wanted to highlight the two years so that the viewer could easily see the years I was focusing on. To do this, I highlighted 2015 and 2022 using `geom_col`.
+
 
 ```{r fig.width = 13, fig.height = 5}
 
@@ -841,9 +869,11 @@ ah_clean_plot <- ah_clean %>%
 
 ```
 
+
 ### Plotting: Bar Plot
 
 Once we plotted this bar plot, we can see that after 2015, the amount of money going into affordable housing increased exponentially. As it began to decrease, for factors that we are not going into here, another mayor passed executive directive 1 that expedited the process of building 100% affordable housing projects. This order made the permitting and zoning processes much easier, and two years later there have been "more than 16,150 affordable units" ([Los Angeles Daily News](https://www.dailynews.com/2024/02/08/los-angeles-one-weird-trick-to-build-affordable-housing-at-no-public-cost/)) proposed. The hope is that this momentum continues.
+
 
 ```{r fig.width = 13, fig.height = 5}
 ah_clean_plot %>%  
@@ -914,6 +944,7 @@ ah_clean_plot %>%
 
 ```
 
+
 # Infographic
 
 Putting it all together, we get a picture of affordable housing in LA.
@@ -925,3 +956,4 @@ Putting it all together, we get a picture of affordable housing in LA.
 The infographic decisions I made were intended to follow the theme of the building I grew up in. The drawing of buildings inside the bar plot felt appropriate since it is looking at the amount of money for building new affordable housing developments.
 
 I made sure to highlight the important elements of each plot, and add context to the maps. Having the map allows people to see the location that all of this is taking place. My main goal was to highlight potential approaches to understanding how LA is approaching its affordable housing crisis, and a path to guide people to focusing on areas that need more help. Looking at multiple factors, in this case eligibility and burden, is only hinting at the complex dynamics that are involved in building equitable solutions in cities.
+
