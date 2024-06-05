@@ -1,0 +1,36 @@
+---
+title: "Emotional Baking"
+subtitle: "A cookbook in the works from my house to yours"
+listing: 
+  contents: baking
+  type: grid
+  sort: "date desc"
+  categories: true
+page-layout: full
+title-block-banner: true
+---
+
+# Zesty Briny Baked Chicken: Jelly & Georgia
+
+# Sourdough: Georgia
+
+# Kale & Pomegranate Salad: Jelly
+
+# Citrus Fennel Salad
+
+# Orzo Salad: Georgia 
+
+# Sauce Section
+## Pesto: Eva
+## Pea Dip: Jackson
+## Loquat Chutney: Luna
+
+# Couscous Salad: Luna
+
+# Twice-Baked Potatos: Ava
+
+# Beets: Luna
+
+# Beer Battered Cauliflower: Luna
+
+# 

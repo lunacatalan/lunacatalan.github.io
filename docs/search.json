@@ -2,9 +2,9 @@
   {
     "objectID": "blog.html",
     "href": "blog.html",
-    "title": "Blog",
+    "title": "Data Science Blogs",
     "section": "",
-    "text": "Who, What, Where: Exploring Affordable Housing in Los Angeles, CA\n\n\n\n\n\n\n\nGeospatial\n\n\nQuarto\n\n\nR\n\n\nMEDS\n\n\n\n\n\n\n\n\n\n\n\nMar 9, 2024\n\n\nLuna Herschenfeld-Catalán she/her\n\n\n\n\n\n\n  \n\n\n\n\nClimatic Trends and Agriculture Expansion on Declining Water Levels in Arid Aquifer, Iran\n\n\n\n\n\n\n\nStatistics\n\n\nGeospatial\n\n\nQuarto\n\n\nR\n\n\nPython\n\n\nMEDS\n\n\n\n\nInvestigating the role of climatic and anthropogenic factors on groundwater level declines in the Qazvin Plain Aquifer from 1985-2019.\n\n\n\n\n\n\nDec 14, 2023\n\n\nLuna Herschenfeld-Catalán\n\n\n\n\n\n\n  \n\n\n\n\nAnalysis of Air Quality from Thomas Fire in Santa Barbara\n\n\n\n\n\n\n\nGeospatial\n\n\nQuarto\n\n\nPython\n\n\nMEDS\n\n\n\n\nExploring the effect of the Thomas Fire on Air Quality in Santa Barbara in 2017.\n\n\n\n\n\n\nDec 13, 2023\n\n\nLuna Herschenfeld-Catalán\n\n\n\n\n\n\n  \n\n\n\n\nAnalysis of Houston Blackouts\n\n\n\n\n\n\n\nGeospatial\n\n\nQuarto\n\n\nR\n\n\nMEDS\n\n\n\n\nInvestigating socioeconomic factors in the Houston metropolitan area in the aftermath of two winter storms in February, 2021.\n\n\n\n\n\n\nDec 5, 2023\n\n\nLuna Herschenfeld-Catalán\n\n\n\n\n\n\nNo matching items"
+    "text": "Who, What, Where: Exploring Affordable Housing in Los Angeles, CA\n\n\n\n\n\n\n\nGeospatial\n\n\nQuarto\n\n\nR\n\n\nMEDS\n\n\n\n\nInvestigating the access to and need for affordable housing in the Los Angeles County area to guide equitable approaches to the housing crisis.\n\n\n\n\n\n\nMar 9, 2024\n\n\nLuna Herschenfeld-Catalán she/her\n\n\n\n\n\n\n  \n\n\n\n\nClimatic Trends and Agriculture Expansion on Declining Water Levels in Arid Aquifer, Iran\n\n\n\n\n\n\n\nStatistics\n\n\nGeospatial\n\n\nQuarto\n\n\nR\n\n\nPython\n\n\nMEDS\n\n\n\n\nInvestigating the role of climatic and anthropogenic factors on groundwater level declines in the Qazvin Plain Aquifer from 1985-2019.\n\n\n\n\n\n\nDec 14, 2023\n\n\nLuna Herschenfeld-Catalán\n\n\n\n\n\n\n  \n\n\n\n\nAnalysis of Air Quality from Thomas Fire in Santa Barbara\n\n\n\n\n\n\n\nGeospatial\n\n\nQuarto\n\n\nPython\n\n\nMEDS\n\n\n\n\nExploring the effect of the Thomas Fire on Air Quality in Santa Barbara in 2017.\n\n\n\n\n\n\nDec 13, 2023\n\n\nLuna Herschenfeld-Catalán\n\n\n\n\n\n\n  \n\n\n\n\nAnalysis of Houston Blackouts\n\n\n\n\n\n\n\nGeospatial\n\n\nQuarto\n\n\nR\n\n\nMEDS\n\n\n\n\nInvestigating socioeconomic factors in the Houston metropolitan area in the aftermath of two winter storms in February, 2021.\n\n\n\n\n\n\nDec 5, 2023\n\n\nLuna Herschenfeld-Catalán\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -327,5 +327,33 @@
     "title": "Climatic Trends and Agriculture Expansion on Declining Water Levels in Arid Aquifer, Iran",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nI used NDVI initially but realized that there was very sparse vegetation in the area and so I would want to account for the soil reflectance.↩︎"
+  },
+  {
+    "objectID": "baking.html",
+    "href": "baking.html",
+    "title": "Emotional Baking",
+    "section": "",
+    "text": "Zesty Briny Baked Chicken: Jelly & Georgia\n\n\nSourdough: Georgia\n\n\nKale & Pomegranate Salad: Jelly\n\n\nCitrus Fennel Salad\n\n\nOrzo Salad: Georgia\n\n\nSauce Section\n\n\nPesto: Eva\n\n\nCouscous Salad: Luna\n\n\nTwice-Baked Potatos: Ava\n\n\nBeets: Luna\n\n\nBeer Battered Cauliflower: Luna\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "baking.html#pesto-eva",
+    "href": "baking.html#pesto-eva",
+    "title": "Emotional Baking",
+    "section": "Pesto: Eva",
+    "text": "Pesto: Eva"
+  },
+  {
+    "objectID": "baking.html#pea-dip-jackson",
+    "href": "baking.html#pea-dip-jackson",
+    "title": "Emotional Baking",
+    "section": "Pea Dip: Jackson",
+    "text": "Pea Dip: Jackson"
+  },
+  {
+    "objectID": "baking.html#loquat-chutney-luna",
+    "href": "baking.html#loquat-chutney-luna",
+    "title": "Emotional Baking",
+    "section": "Loquat Chutney: Luna",
+    "text": "Loquat Chutney: Luna"
   }
 ]

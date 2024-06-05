@@ -11,8 +11,12 @@ website:
     right:
       - href: index.qmd
         text: Home # use text options to update name
-      - href: blog.qmd
-        text: Blog
+      - text: "Blog"
+        menu:
+          - text: Data Science
+            href: blog.qmd
+          - text: 'Emotional Baking: A Cookbook'
+            href: baking.qmd
       - href: about.qmd
         text: About
       - icon: github # icons

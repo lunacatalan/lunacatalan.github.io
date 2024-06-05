@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About</title>
+<title>Emotional Baking</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,9 +30,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -58,7 +61,38 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -100,7 +134,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -116,75 +150,110 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Emotional Baking</h1>
+            <p class="subtitle lead">A cookbook in the works from my house to yours</p>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#zesty-briny-baked-chicken-jelly-georgia" id="toc-zesty-briny-baked-chicken-jelly-georgia" class="nav-link active" data-scroll-target="#zesty-briny-baked-chicken-jelly-georgia">Zesty Briny Baked Chicken: Jelly &amp; Georgia</a></li>
+  <li><a href="#sourdough-georgia" id="toc-sourdough-georgia" class="nav-link" data-scroll-target="#sourdough-georgia">Sourdough: Georgia</a></li>
+  <li><a href="#kale-pomegranate-salad-jelly" id="toc-kale-pomegranate-salad-jelly" class="nav-link" data-scroll-target="#kale-pomegranate-salad-jelly">Kale &amp; Pomegranate Salad: Jelly</a></li>
+  <li><a href="#citrus-fennel-salad" id="toc-citrus-fennel-salad" class="nav-link" data-scroll-target="#citrus-fennel-salad">Citrus Fennel Salad</a></li>
+  <li><a href="#orzo-salad-georgia" id="toc-orzo-salad-georgia" class="nav-link" data-scroll-target="#orzo-salad-georgia">Orzo Salad: Georgia</a></li>
+  <li><a href="#sauce-section" id="toc-sauce-section" class="nav-link" data-scroll-target="#sauce-section">Sauce Section</a>
+  <ul class="collapse">
+  <li><a href="#pesto-eva" id="toc-pesto-eva" class="nav-link" data-scroll-target="#pesto-eva">Pesto: Eva</a></li>
+  <li><a href="#pea-dip-jackson" id="toc-pea-dip-jackson" class="nav-link" data-scroll-target="#pea-dip-jackson">Pea Dip: Jackson</a></li>
+  <li><a href="#loquat-chutney-luna" id="toc-loquat-chutney-luna" class="nav-link" data-scroll-target="#loquat-chutney-luna">Loquat Chutney: Luna</a></li>
+  </ul></li>
+  <li><a href="#couscous-salad-luna" id="toc-couscous-salad-luna" class="nav-link" data-scroll-target="#couscous-salad-luna">Couscous Salad: Luna</a></li>
+  <li><a href="#twice-baked-potatos-ava" id="toc-twice-baked-potatos-ava" class="nav-link" data-scroll-target="#twice-baked-potatos-ava">Twice-Baked Potatos: Ava</a></li>
+  <li><a href="#beets-luna" id="toc-beets-luna" class="nav-link" data-scroll-target="#beets-luna">Beets: Luna</a></li>
+  <li><a href="#beer-battered-cauliflower-luna" id="toc-beer-battered-cauliflower-luna" class="nav-link" data-scroll-target="#beer-battered-cauliflower-luna">Beer Battered Cauliflower: Luna</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  </ul>
+</nav>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
 <!-- main -->
-<div class="quarto-about-solana column-page">
-  <div class="about-entity">
-    <div class="entity-contents">
-      <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">About</h1>
-</div>
-<div class="quarto-title-meta">
-  </div>
-</header> 
-      <div class="about-contents"><main class="content column-page" id="quarto-document-content">
-<section id="education" class="level1">
-<h1>EDUCATION</h1>
-<section id="master-of-environmental-data-science" class="level2">
-<h2 data-anchor-id="master-of-environmental-data-science">Master of Environmental Data Science</h2>
-<section id="june-2024" class="level4">
-<h4 data-anchor-id="june-2024">June 2024</h4>
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+
+
+
+
+<section id="zesty-briny-baked-chicken-jelly-georgia" class="level1">
+<h1>Zesty Briny Baked Chicken: Jelly &amp; Georgia</h1>
 </section>
-<section id="bren-school-of-environmental-science-management-uc-santa-barbara-ucsb." class="level4">
-<h4 data-anchor-id="bren-school-of-environmental-science-management-uc-santa-barbara-ucsb.">Bren School of Environmental Science &amp; Management – UC, Santa Barbara (UCSB).</h4>
-<p><br>
-<em>Highlighted Coursework:</em> Machine Learning in Environmental Science; Environmental Policy Evaluation; Data Visualization and Communication; Python for Environmental Data Science (EDS); Modeling Environmental Systems; Analytical Workflows and Scientific Reproducibility</p>
+<section id="sourdough-georgia" class="level1">
+<h1>Sourdough: Georgia</h1>
 </section>
+<section id="kale-pomegranate-salad-jelly" class="level1">
+<h1>Kale &amp; Pomegranate Salad: Jelly</h1>
 </section>
-<section id="environmental-science-b.s.-psychological-brain-sciences-b.s." class="level2">
-<h2 data-anchor-id="environmental-science-b.s.-psychological-brain-sciences-b.s.">Environmental Science (B.S.) &amp; Psychological Brain Sciences (B.S.)</h2>
-<section id="june-2019" class="level4">
-<h4 data-anchor-id="june-2019">June 2019</h4>
+<section id="citrus-fennel-salad" class="level1">
+<h1>Citrus Fennel Salad</h1>
 </section>
-<section id="university-of-california-santa-barbara" class="level4">
-<h4 data-anchor-id="university-of-california-santa-barbara">University of California, Santa Barbara</h4>
-<p><br>
-<em>Highlighted Coursework:</em> GIS for Environmental Application; Exploring Water Data Honors: Outstanding Senior Award, Environmental Studies</p>
+<section id="orzo-salad-georgia" class="level1">
+<h1>Orzo Salad: Georgia</h1>
+</section>
+<section id="sauce-section" class="level1">
+<h1>Sauce Section</h1>
+<section id="pesto-eva" class="level2">
+<h2 class="anchored" data-anchor-id="pesto-eva">Pesto: Eva</h2>
+</section>
+<section id="pea-dip-jackson" class="level2">
+<h2 class="anchored" data-anchor-id="pea-dip-jackson">Pea Dip: Jackson</h2>
+</section>
+<section id="loquat-chutney-luna" class="level2">
+<h2 class="anchored" data-anchor-id="loquat-chutney-luna">Loquat Chutney: Luna</h2>
 </section>
 </section>
+<section id="couscous-salad-luna" class="level1">
+<h1>Couscous Salad: Luna</h1>
 </section>
-<section id="skills" class="level1">
-<h1>SKILLS</h1>
-<section id="programming-coding-data-analysis" class="level3">
-<h3 data-anchor-id="programming-coding-data-analysis">Programming, Coding, &amp; Data Analysis:</h3>
-<p>R, Python, GIS, SQL, Git (+ GitHub); Familiar with HTML.</p>
+<section id="twice-baked-potatos-ava" class="level1">
+<h1>Twice-Baked Potatos: Ava</h1>
 </section>
-<section id="programming-environments" class="level3">
-<h3 data-anchor-id="programming-environments">Programming Environments:</h3>
-<p>RStudio, Google Earth Engine, ArcGIS, QGIS, Visual Studio Code, Jupyter Notebooks.</p>
+<section id="beets-luna" class="level1">
+<h1>Beets: Luna</h1>
 </section>
-<section id="technical-coding-skills" class="level3">
-<h3 data-anchor-id="technical-coding-skills">Technical Coding Skills:</h3>
-<p>Geospatial Analysis, Data Visualization, Machine Learning, and Database Management.</p>
+<section id="beer-battered-cauliflower-luna" class="level1">
+<h1>Beer Battered Cauliflower: Luna</h1>
 </section>
-</section>
-<section id="experience" class="level1">
-<h1>EXPERIENCE</h1>
-<p>Page is still under construction, come back soon :)</p>
+<section id="section" class="level1">
+<h1></h1>
+
 
 
 </section>
-</main></div>
-    </div>
-    <img src="about_photo.JPG" class="about-image
-  rectangle " style="width: 15em;">
-  </div>
+
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+
 </div>
- <!-- /main -->
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -205,6 +274,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
