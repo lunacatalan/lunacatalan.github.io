@@ -1,0 +1,16 @@
+---
+title: "Kale and Pomegranate Salad"
+description: "Perfect Potluck Addition"
+title-block-banner: true
+author: "Luna Herschenfeld-Catalán"
+date: 06-05-2024
+categories: [Salad, Summer, Pomegranate, Kale] # self-defined categories
+citation: 
+  url: https://lunacatalan.github.io/baking/kale_salad/index.html 
+format:
+  html:
+    code-fold: true
+draft: false
+image: kale.png
+toc: TRUE
+---

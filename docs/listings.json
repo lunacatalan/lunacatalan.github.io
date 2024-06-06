@@ -10,6 +10,19 @@
   },
   {
     "listing": "/baking.html",
-    "items": []
+    "items": [
+      "/baking/beer_bat_cauliflower/index.html",
+      "/baking/kale_salad/index.html",
+      "/baking/couscous_salad/index.html",
+      "/baking/citrus_fennel_salad/index.html",
+      "/baking/sourdough/index.html",
+      "/baking/pea_dip/index.html",
+      "/baking/pesto/index.html",
+      "/baking/orzo_salad/index.html",
+      "/baking/tahini_cauliflower/index.html",
+      "/baking/twice_baked_potato/index.html",
+      "/baking/loquat_chutney/index.html",
+      "/baking/zesty_briny_baked_chicken/index.html"
+    ]
   }
 ]

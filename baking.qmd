@@ -10,27 +10,6 @@ page-layout: full
 title-block-banner: true
 ---
 
-# Zesty Briny Baked Chicken: Jelly & Georgia
+## Other Ideas
 
-# Sourdough: Georgia
-
-# Kale & Pomegranate Salad: Jelly
-
-# Citrus Fennel Salad
-
-# Orzo Salad: Georgia 
-
-# Sauce Section
-## Pesto: Eva
-## Pea Dip: Jackson
-## Loquat Chutney: Luna
-
-# Couscous Salad: Luna
-
-# Twice-Baked Potatos: Ava
-
-# Beets: Luna
-
-# Beer Battered Cauliflower: Luna
-
-# 
+Beets: Luna

@@ -1,0 +1,16 @@
+---
+title: "Zesty Briny Baked Chicken"
+description: "A delicious baked chicken from Jelly & Georgia"
+title-block-banner: true
+author: "Luna Herschenfeld-Catalán"
+date: 06-05-2024
+categories: [Chicken, Lemon] # self-defined categories
+citation: 
+  url: https://lunacatalan.github.io/baking/zesty_briny_baked_chicken/index.html 
+format:
+  html:
+    code-fold: true
+draft: false
+image: chicken.png
+toc: TRUE
+---

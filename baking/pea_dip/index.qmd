@@ -1,0 +1,16 @@
+---
+title: "Green Pea Dip"
+description: "Jackson's best pasta sauce"
+title-block-banner: true
+author: "Luna Herschenfeld-Catalán"
+date: 06-05-2024
+categories: [Peas, Sauce] # self-defined categories
+citation: 
+  url: https://lunacatalan.github.io/baking/pea_dip/index.html 
+format:
+  html:
+    code-fold: true
+draft: false
+image: houston_b.jpeg
+toc: TRUE
+---

@@ -71,9 +71,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -175,72 +175,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#zesty-briny-baked-chicken-jelly-georgia" id="toc-zesty-briny-baked-chicken-jelly-georgia" class="nav-link active" data-scroll-target="#zesty-briny-baked-chicken-jelly-georgia">Zesty Briny Baked Chicken: Jelly &amp; Georgia</a></li>
-  <li><a href="#sourdough-georgia" id="toc-sourdough-georgia" class="nav-link" data-scroll-target="#sourdough-georgia">Sourdough: Georgia</a></li>
-  <li><a href="#kale-pomegranate-salad-jelly" id="toc-kale-pomegranate-salad-jelly" class="nav-link" data-scroll-target="#kale-pomegranate-salad-jelly">Kale &amp; Pomegranate Salad: Jelly</a></li>
-  <li><a href="#citrus-fennel-salad" id="toc-citrus-fennel-salad" class="nav-link" data-scroll-target="#citrus-fennel-salad">Citrus Fennel Salad</a></li>
-  <li><a href="#orzo-salad-georgia" id="toc-orzo-salad-georgia" class="nav-link" data-scroll-target="#orzo-salad-georgia">Orzo Salad: Georgia</a></li>
-  <li><a href="#sauce-section" id="toc-sauce-section" class="nav-link" data-scroll-target="#sauce-section">Sauce Section</a>
-  <ul class="collapse">
-  <li><a href="#pesto-eva" id="toc-pesto-eva" class="nav-link" data-scroll-target="#pesto-eva">Pesto: Eva</a></li>
-  <li><a href="#pea-dip-jackson" id="toc-pea-dip-jackson" class="nav-link" data-scroll-target="#pea-dip-jackson">Pea Dip: Jackson</a></li>
-  <li><a href="#loquat-chutney-luna" id="toc-loquat-chutney-luna" class="nav-link" data-scroll-target="#loquat-chutney-luna">Loquat Chutney: Luna</a></li>
-  </ul></li>
-  <li><a href="#couscous-salad-luna" id="toc-couscous-salad-luna" class="nav-link" data-scroll-target="#couscous-salad-luna">Couscous Salad: Luna</a></li>
-  <li><a href="#twice-baked-potatos-ava" id="toc-twice-baked-potatos-ava" class="nav-link" data-scroll-target="#twice-baked-potatos-ava">Twice-Baked Potatos: Ava</a></li>
-  <li><a href="#beets-luna" id="toc-beets-luna" class="nav-link" data-scroll-target="#beets-luna">Beets: Luna</a></li>
-  <li><a href="#beer-battered-cauliflower-luna" id="toc-beer-battered-cauliflower-luna" class="nav-link" data-scroll-target="#beer-battered-cauliflower-luna">Beer Battered Cauliflower: Luna</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#other-ideas" id="toc-other-ideas" class="nav-link active" data-scroll-target="#other-ideas">Other Ideas</a></li>
   </ul>
 </nav>
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(12)</span></div><div class="category" data-category="Baking">Baking <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Basil">Basil <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Beer">Beer <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Bread">Bread <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Cauliflower">Cauliflower <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Chicken">Chicken <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Fennel">Fennel <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Fried">Fried <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Kale">Kale <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Lemon">Lemon <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Loquat">Loquat <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Orange">Orange <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Orzo">Orzo <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Pasta">Pasta <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Peas">Peas <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Pomegranate">Pomegranate <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Potato">Potato <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Roasted">Roasted <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Salad">Salad <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Sauce">Sauce <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Summer">Summer <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Tahini">Tahini <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cauliflower">cauliflower <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
-<section id="zesty-briny-baked-chicken-jelly-georgia" class="level1">
-<h1>Zesty Briny Baked Chicken: Jelly &amp; Georgia</h1>
-</section>
-<section id="sourdough-georgia" class="level1">
-<h1>Sourdough: Georgia</h1>
-</section>
-<section id="kale-pomegranate-salad-jelly" class="level1">
-<h1>Kale &amp; Pomegranate Salad: Jelly</h1>
-</section>
-<section id="citrus-fennel-salad" class="level1">
-<h1>Citrus Fennel Salad</h1>
-</section>
-<section id="orzo-salad-georgia" class="level1">
-<h1>Orzo Salad: Georgia</h1>
-</section>
-<section id="sauce-section" class="level1">
-<h1>Sauce Section</h1>
-<section id="pesto-eva" class="level2">
-<h2 class="anchored" data-anchor-id="pesto-eva">Pesto: Eva</h2>
-</section>
-<section id="pea-dip-jackson" class="level2">
-<h2 class="anchored" data-anchor-id="pea-dip-jackson">Pea Dip: Jackson</h2>
-</section>
-<section id="loquat-chutney-luna" class="level2">
-<h2 class="anchored" data-anchor-id="loquat-chutney-luna">Loquat Chutney: Luna</h2>
-</section>
-</section>
-<section id="couscous-salad-luna" class="level1">
-<h1>Couscous Salad: Luna</h1>
-</section>
-<section id="twice-baked-potatos-ava" class="level1">
-<h1>Twice-Baked Potatos: Ava</h1>
-</section>
-<section id="beets-luna" class="level1">
-<h1>Beets: Luna</h1>
-</section>
-<section id="beer-battered-cauliflower-luna" class="level1">
-<h1>Beer Battered Cauliflower: Luna</h1>
-</section>
-<section id="section" class="level1">
-<h1></h1>
+<section id="other-ideas" class="level2">
+<h2 class="anchored" data-anchor-id="other-ideas">Other Ideas</h2>
+<p>Beets: Luna</p>
 
 
 
@@ -248,7 +195,420 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-
+<div class="g-col-1" data-index="0" data-categories="Fried,Cauliflower,Beer" data-listing-date-sort="1717570800000" data-listing-file-modified-sort="1717643691915" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<a href="./baking/beer_bat_cauliflower/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./baking/beer_bat_cauliflower/houston_b.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Beer Battered Cauliflower Wings
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Fried'); return false;">
+Fried
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Cauliflower'); return false;">
+Cauliflower
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Beer'); return false;">
+Beer
+</div>
+</div>
+<div class="card-text listing-description">
+Something you can eat in one bite or throw at each other
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Luna Herschenfeld-Catalán
+</div>
+<div class="listing-date">
+Jun 5, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="Salad,Summer,Pomegranate,Kale" data-listing-date-sort="1717570800000" data-listing-file-modified-sort="1717653192130" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<a href="./baking/kale_salad/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./baking/kale_salad/kale.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Kale and Pomegranate Salad
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Salad'); return false;">
+Salad
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Summer'); return false;">
+Summer
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Pomegranate'); return false;">
+Pomegranate
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Kale'); return false;">
+Kale
+</div>
+</div>
+<div class="card-text listing-description">
+Perfect Potluck Addition
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Luna Herschenfeld-Catalán
+</div>
+<div class="listing-date">
+Jun 5, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="Bread,Baking" data-listing-date-sort="1717570800000" data-listing-file-modified-sort="1717652735969" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<a href="./baking/couscous_salad/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./baking/couscous_salad/couscous.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Couscous Salad
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Bread'); return false;">
+Bread
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Baking'); return false;">
+Baking
+</div>
+</div>
+<div class="card-text listing-description">
+Perfect Potluck Addition
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Luna Herschenfeld-Catalán
+</div>
+<div class="listing-date">
+Jun 5, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="3" data-categories="Orange,Fennel,Salad,Summer" data-listing-date-sort="1717570800000" data-listing-file-modified-sort="1717643529631" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<a href="./baking/citrus_fennel_salad/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./baking/citrus_fennel_salad/houston_b.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Citrus Fennel Salad
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Orange'); return false;">
+Orange
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Fennel'); return false;">
+Fennel
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Salad'); return false;">
+Salad
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Summer'); return false;">
+Summer
+</div>
+</div>
+<div class="card-text listing-description">
+Perfect Potluck Addition
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Luna Herschenfeld-Catalán
+</div>
+<div class="listing-date">
+Jun 5, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="4" data-categories="Bread,Baking" data-listing-date-sort="1717570800000" data-listing-file-modified-sort="1717641441347" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<a href="./baking/sourdough/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./baking/sourdough/houston_b.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Sourdough
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Bread'); return false;">
+Bread
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Baking'); return false;">
+Baking
+</div>
+</div>
+<div class="card-text listing-description">
+Georgia’s guide to sourdough
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Luna Herschenfeld-Catalán
+</div>
+<div class="listing-date">
+Jun 5, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="5" data-categories="Peas,Sauce" data-listing-date-sort="1717570800000" data-listing-file-modified-sort="1717641707127" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<a href="./baking/pea_dip/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./baking/pea_dip/houston_b.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Green Pea Dip
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Peas'); return false;">
+Peas
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Sauce'); return false;">
+Sauce
+</div>
+</div>
+<div class="card-text listing-description">
+Jackson’s best pasta sauce
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Luna Herschenfeld-Catalán
+</div>
+<div class="listing-date">
+Jun 5, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="6" data-categories="Sauce,Basil" data-listing-date-sort="1717570800000" data-listing-file-modified-sort="1717641721180" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<a href="./baking/pesto/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./baking/pesto/houston_b.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Pesto
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Sauce'); return false;">
+Sauce
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Basil'); return false;">
+Basil
+</div>
+</div>
+<div class="card-text listing-description">
+Eva’s best pesto
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Luna Herschenfeld-Catalán
+</div>
+<div class="listing-date">
+Jun 5, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="7" data-categories="Orzo,Salad,Pasta" data-listing-date-sort="1717570800000" data-listing-file-modified-sort="1717643588680" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<a href="./baking/orzo_salad/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./baking/orzo_salad/houston_b.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Orzo Salad
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Orzo'); return false;">
+Orzo
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Salad'); return false;">
+Salad
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Pasta'); return false;">
+Pasta
+</div>
+</div>
+<div class="card-text listing-description">
+Perfect Potluck Addition
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Luna Herschenfeld-Catalán
+</div>
+<div class="listing-date">
+Jun 5, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="8" data-categories="cauliflower,Tahini,Roasted" data-listing-date-sort="1717570800000" data-listing-file-modified-sort="1717651588962" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<a href="./baking/tahini_cauliflower/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./baking/tahini_cauliflower/cauliflower.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Tahini Cauliflower
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('cauliflower'); return false;">
+cauliflower
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Tahini'); return false;">
+Tahini
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Roasted'); return false;">
+Roasted
+</div>
+</div>
+<div class="card-text listing-description">
+That perfect bite
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Luna Herschenfeld-Catalán
+</div>
+<div class="listing-date">
+Jun 5, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="9" data-categories="Potato" data-listing-date-sort="1717570800000" data-listing-file-modified-sort="1717645092487" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<a href="./baking/twice_baked_potato/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./baking/twice_baked_potato/cauliflower.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Twice-Baked Potato
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Potato'); return false;">
+Potato
+</div>
+</div>
+<div class="card-text listing-description">
+A recipe from Ava’s heritage
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Luna Herschenfeld-Catalán
+</div>
+<div class="listing-date">
+Jun 5, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="10" data-categories="Loquat,Sauce" data-listing-date-sort="1717570800000" data-listing-file-modified-sort="1717653846510" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<a href="./baking/loquat_chutney/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./baking/loquat_chutney/loquat.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Loquat Chutney
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Loquat'); return false;">
+Loquat
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Sauce'); return false;">
+Sauce
+</div>
+</div>
+<div class="card-text listing-description">
+My favorite foraged sauce
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Luna Herschenfeld-Catalán
+</div>
+<div class="listing-date">
+Jun 5, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="11" data-categories="Chicken,Lemon" data-listing-date-sort="1717570800000" data-listing-file-modified-sort="1717644233312" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<a href="./baking/zesty_briny_baked_chicken/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./baking/zesty_briny_baked_chicken/chicken.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Zesty Briny Baked Chicken
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Chicken'); return false;">
+Chicken
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Lemon'); return false;">
+Lemon
+</div>
+</div>
+<div class="card-text listing-description">
+A delicious baked chicken from Jelly &amp; Georgia
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Luna Herschenfeld-Catalán
+</div>
+<div class="listing-date">
+Jun 5, 2024
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
 </div>
 <div class="listing-no-matching d-none">
 No matching items
