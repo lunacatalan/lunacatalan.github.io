@@ -11,6 +11,6 @@ format:
   html:
     code-fold: true
 draft: false
-image: cauliflower.jpeg
+image: potato.png
 toc: TRUE
 ---
