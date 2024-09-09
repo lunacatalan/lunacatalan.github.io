@@ -75,7 +75,8 @@ library(forecast)
 library(fabletools)
 ```
 
-```{r include = FALSE, message = FALSE, warning = FALSE}
+## Data wrangling
+```{r include = TRUE, message = FALSE, warning = FALSE}
 gw_level_total <- readxl::read_xlsx(here("/Users/lunacatalan/Documents/dev/lunacatalan.github.io/blog/2023-12-decline-groundwater/data/groundwater_time_series.xlsx")) %>% 
   select(Year, WaterLevel) %>% # select years
   separate_wider_delim(col = Year, 
@@ -305,9 +306,11 @@ qazvin_clean <- precip %>%
 
 ## Multiple Linear Regression with AEI mean
 
-I conducted an OLS multiple linear regression with `lm()` to look at how AEI and precipitation impacted the change in groundwater level. The results of the OLS regression are shown in Figure XYZ. I used `ggplot()` to create a scatter plot of the mean AEI and groundwater level change over time. Then I used `geom_smooth()` to plot a linear regression to see how these variables changed over time. The groundwater change slope is negative, and the AEI slope is positive.
+I conducted an OLS multiple linear regression with `lm()` to look at how AEI and precipitation impacted the change in groundwater level. The results of the OLS regression are shown in Figure 1. I used `ggplot()` to create a scatter plot of the mean AEI and groundwater level change over time. Then I used `geom_smooth()` to plot a linear regression to see how these variables changed over time. The groundwater change slope is negative, and the AEI slope is positive.
 
-```{r include = FALSE, message = FALSE, warning = FALSE}
+### Creating the graph
+
+```{r include = TRUE, message = FALSE, warning = FALSE}
 scale = 100
 
 ir_gw_plot <- ggplot(qazvin_clean, aes(x = year, y = change)) + 
