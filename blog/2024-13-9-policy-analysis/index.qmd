@@ -1,0 +1,215 @@
+---
+title: "Assessing program effectiveness"
+description: "Investigating methods to assess whether a policy or program was effective."
+author: "Luna Herschenfeld-Catalán she/her"
+date:  2024-09-13
+title-block-banner: true
+categories: [R] # self-defined categories
+citation: 
+  url: https://lunacatalan.github.io/blog/2024-09-13-policy-analysis/index.html 
+format:
+  html:
+    code-fold: false
+draft: true
+toc: TRUE
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+# Takeaways
+
+# Project Background
+
+For the last year I have been curious about how to assess whether the
+passing or implementation of a policy or program has achieved its
+intended result. This brings up a series of questions:
+
+-   What is the lag between the passing and implementation of a policy?
+-   How is effectiveness measured?
+-   Are rules of success / failure established or investigated
+    beforehand?
+-   What happens if a program fails?
+
+**Policy analysis**: process of identifying potential policy options
+that could address your problem and then comparing those options to
+choose the most effective, efficient, and feasible[^1].
+
+[^1]: https://www.cdc.gov/policy/polaris/policyprocess/policyanalysis/index.html
+
+Being able to approach a problem with a viable solution is critical to
+addressing needs and building a more equitable and sustainable world.
+More importantly, quantifying program impacts can guide investment and
+scaling of projects to make each dollar go farther.
+
+**Types of questions where policy analysis can be useful**
+
+-   What is the most effective way to improve air quality?
+
+-   How can a society optimize access to education?
+
+-   How should a municipal government pay for an expensive
+    infrastructure project?
+
+**Types of analysis to be conducted on policy:**
+
+-   Legal
+
+-   Feasibility
+
+-   Impact
+
+-   Cost-benefit
+
+-   Client-based
+
+**Techniques and Methods:**
+
+-   Stakeholder: who must be involved and who can affect the policy
+    design and outcomes
+
+-   Process: linear planning models and critical path mapping
+
+-   Network Analysis: Exploring risk and uncertainty; estimat utility of
+    alternative and its effects
+
+-   Case study: study policy failure or in institutions can provide lots
+    of information about role of stakeholders
+
+-   Survey: collecting information from important reference gorups on
+    people's attitudes
+
+At the start of this project (Sept 13, 2024), I have some thoughts on
+what will be important to measure to determine effectiveness:
+
+-   Cost
+
+-   Profit
+
+-   \# People impacted
+
+-   Quality of life
+
+-   time
+
+-   fulfill the need defined by the policy
+
+Since I have never analyzed a policy, I am going to start with an
+analysis that has already been done.
+
+# Important Actors
+
+## Policy Experts
+
+Who: Subject matter experts, economists, community partners Why:
+Interpret the policy to understand what it contains. Act as translators.
+
+## Members affected by the policy
+
+Who: Anyone or group who's jobs or lives may be affected by the policy
+Why: Provide contextual knowledge and perspective (eg. social,
+educational, cultural) to inform how a policy may impact their lives
+
+## Implementators
+
+Who: Public officials/administrators Why: Understand the processes of
+implementation, legal landscape around policies, economic or budgetary
+impacts or constraints of the policy options
+
+# Steps
+
+1.  Define and analyze the problem
+    1.  What is the problem we are facing? Where does it exist (eg.
+        urban vs rural, suburban)? Who is affected? What are the major
+        causes? How might the causes be affected by policy action?
+2.  Construct policy alternatives
+    1.  What policy options might be considered for dealing with the
+        problem?
+3.  Develop criteria for evaluation
+    1.  What criteria are most suitable for the problem and
+        alternatives? What are the costs of action? What is the likeley
+        effectiveness? Is it socially equitable? Is the policy socially
+        and politically feasible?
+4.  Assess the alternatives
+    1.  Which alternatives are better than others? What kind of analysis
+        might help distinguish better/worse policy alternatives? Is the
+        evidence available? How can we produce evidence?
+5.  Draw conclusions
+    1.  Which policy option is the most desireable given the
+        circumstances and criteria for evaluation? What other factors
+        shoul dbe considered?
+
+## Policy Models
+
+### Linear Policy cycle model 
+
+Accounts for the various steps in the policy making process
+
+1.  Agenda setting (identifying issues)
+
+Process for political prioritization
+
+-   Window of opportunity...created when policy problems, policy
+    solutions, and political support come together (Kingdon: health
+    policy)
+
+How do we make it easier to cross the street?
+
+2.  Policy formulation
+
+Make the street a 4-way stop at the intersection
+
+Add speed bumps
+
+Add crossing guard
+
+3.  Policy adoption/Legitimization
+
+Go to city council
+
+Go get a petition
+
+4.  Policy Implementation
+
+What factors influence the collective action required to implement
+policy?
+
+*Top-down theory:* implementation is a process that can be pre-planned
+and controlled by the central planners responsible for developing the
+policies...but in practice this theory does not hold up.
+
+*Bottom-up*: Process of interaction and negotiation between those
+seeking tp put policy into effect and those upon whom the action depends
+
+-   street-level bureaucracy: may resist policy change or support
+
+-   draw on experiential knowledge, delegate power, strengthen mutual
+    accountability
+
+Install stop signs
+
+Add paint or add speed bumps
+
+5.  Policy assessment/evaluation
+
+Survey people in the community (strengths / weaknesses)
+
+Has it addressed the issue?
+
+## Prospective policy analysis 
+
+-   managing actor power and dynamics
+
+-   developing advocacy strategies
+
+-   improving prospects for evidence use in policy formulation
+
+# Case Study 
+
+## Select a policy
+
+WHOS Mental health action plan 2013-2020
+
+## Define the Context, Content, Process, and Actors relevant to policy 
+
+## Collect data for each category 
